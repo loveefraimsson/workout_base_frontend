@@ -1,0 +1,23 @@
+.test {
+    width: 693px;
+    height: 500px;
+}
+
+img {
+    width: 368px;
+    display: block;
+}
+
+h1 {
+    color: blue;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+}
+
+iframe {
+    width: 467px;
+    height: auto;
+}
