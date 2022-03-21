@@ -19,7 +19,8 @@ export class Header extends Component {
     let buttons;
 
     //LOGGED IN
-    if(localStorage.getItem("userName") === "Sanna") {
+   /*  if(localStorage.getItem("userName") === "Sanna") { */
+    if(localStorage.getItem("loggedIn") === "true") {
       buttons = (
         <ul className='navbar-nav'>
           <li className='navItem'>
@@ -42,10 +43,10 @@ export class Header extends Component {
     }
 
     // <ul className='navbar-nav'>
-    //   <li className='navItem'>
-    //     <Link className="navLink" to="/login">Login</Link>
-    //   </li>
-    // </ul>
+      //   <li className='navItem'>
+      //     <Link className="navLink" to="/login">Login</Link>
+      //   </li>
+      // </ul>
     
     return (
       <div>

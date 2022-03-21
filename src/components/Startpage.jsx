@@ -5,17 +5,20 @@ import { Link } from 'react-router-dom';
 
 
 export class Startpage extends Component {
+  
 
   render() {
     
-    let isUserName = localStorage.getItem('userName');
+    //let isUserName = localStorage.getItem('userName');
+    let isLoggedIn = localStorage.getItem('loggedIn');
 
     //KANSKE INTE SANNA UTAN TOMT ELLER INTE
-    if(isUserName === 'Sanna') {
+   /*  if(isUserName === 'Sanna') { */
+    if(isLoggedIn === 'true') {
       return (
               <>
                 <Header />
-                <h2>Hej {isUserName}</h2>
+                <h2>Hej</h2>
                 <Link to="trainingprogram">Träningsprogram</Link>
               </>
             )
