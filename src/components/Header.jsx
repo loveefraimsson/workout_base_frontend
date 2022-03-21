@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './Header.scss';
+//import './Header.scss';
+
+import logo from "../images/logo.png";
 
 
 import {
@@ -9,9 +11,7 @@ import {
 
 export class Header extends Component {
   
-  state = {
   
-  }
 
   
   render() {
@@ -19,7 +19,6 @@ export class Header extends Component {
     let buttons;
 
     //LOGGED IN
-   /*  if(localStorage.getItem("userName") === "Sanna") { */
     if(localStorage.getItem("loggedIn") === "true") {
       buttons = (
         <ul className='navbar-nav'>
@@ -41,26 +40,18 @@ export class Header extends Component {
     else {
       buttons = null;
     }
-
-    // <ul className='navbar-nav'>
-      //   <li className='navItem'>
-      //     <Link className="navLink" to="/login">Login</Link>
-      //   </li>
-      // </ul>
     
     return (
-      <div>
-          <h1>Header</h1>
-          <nav className='navbar'>
-            <div className='container'>
+      <header>
+          <img src={logo} alt="WorkoutBase-logo" />
+          <nav className='navbarContainer'>
+            <section className='navbar'>
               {buttons}
+            </section>
 
-            </div>
-
-          
         </nav>
          
-      </div>
+      </header>
     )
   }
 }

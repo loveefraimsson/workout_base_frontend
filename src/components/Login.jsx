@@ -10,6 +10,7 @@ class Login extends Component {
 
     state = {
         userName: '',
+        password: '',
         isLoggedIn: false,
     }
 
@@ -18,27 +19,26 @@ class Login extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault();
 
-        const data = {
+        const userData = {
             userName: this.userName,
             password: this.password
         }
-        //console.log(data);
-
 
         fetch("http://localhost:3001/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(userData)
         })
         .then(res => res.json())
         .then(data => {
 
             console.log(data);
             //If the login details is correct
-           if(data.code == "Success") {
+           if(data.code === "Success") {
                 localStorage.setItem("loggedIn", true);
+                localStorage.setItem("userName", data.userName);
                 this.setState({ isLoggedIn: true })
             }
             //If the loginin details is wrong
@@ -46,35 +46,25 @@ class Login extends Component {
                 localStorage.setItem("loggedIn", false);
                 this.setState({ isLoggedIn: false })
             }
-        });
-
-        //localStorage.setItem("userName", data.userName);
-        //this.setState({ userName: data.userName })
-
-        
+        });      
 
     }
 
     render() {
-
-
-        /* if(this.state.userName === "Sanna") {
-            return <Redirect to="/" />
-        } */
 
         if(this.state.isLoggedIn === true) {
             return <Redirect to="/" />
         }
 
         return (
-            <div>
+            <section>
                 <h3>Login page</h3>
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" onChange={e => this.userName = e.target.value} /> <br />
                         <input type="text" onChange={e => this.password = e.target.value} /> <br />
                         <button type='submit'>Logga in</button>                
                   </form>
-            </div>
+            </section>
         )
     }
 }

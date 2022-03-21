@@ -22,7 +22,6 @@ class App extends Component {
 
   state = {
     exerciseArray: [],
-    user: localStorage.getItem("userName"),
   }
 
   /* componentDidMount = () => {
@@ -43,13 +42,7 @@ class App extends Component {
 
       <Router>
 
-        <div className="App">
-        
-         
-
-          {/* <div className='auth-wrapper'>
-            <div className='auth-inner'> */}
-            
+        <section className="App">
 
               <Switch>
                 <Route exact path="/" component={Startpage} />
@@ -58,10 +51,8 @@ class App extends Component {
                 <Route exact path="/profilepage" component={Profilepage} />
                 <Route exact path="/trainingprogram" component={TrainingProgram} />
               </Switch>
-
-            {/* </div>
-          </div> */}
-        </div>
+              
+        </section>
 
       </Router>
         
