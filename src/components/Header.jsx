@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './Header.scss';
+import '../styles/header.scss';
 
 import logo from "../images/logo.png";
 
@@ -42,14 +42,16 @@ export class Header extends Component {
     }
     
     return (
-      <header>
-          <img src={logo} alt="WorkoutBase-logo" />
+      <header className='header'>
+          <img className='logo' src={logo} alt="WorkoutBase-logo" />
+          
           <nav className='navbarContainer'>
             <section className='navbar'>
               {buttons}
             </section>
 
-        </nav>
+          </nav>
+          
          
       </header>
     )

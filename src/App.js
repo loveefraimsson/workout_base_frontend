@@ -9,6 +9,9 @@ import Startpage from './components/Startpage';
 import Login from './components/Login';
 import WorkoutBank from './components/WorkoutBank';
 import TrainingProgram from './components/TrainingProgram';
+import Footer from './components/Footer';
+
+import './styles/App.scss';
 
 import {
   BrowserRouter as Router,
@@ -39,22 +42,31 @@ class App extends Component {
   render() {
 
     return (
+      <>
+      <section className="App">
+        
+        <section className='routing'>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Startpage} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/workoutbank" component={WorkoutBank} />
+              <Route exact path="/profilepage" component={Profilepage} />
+              <Route exact path="/trainingprogram" component={TrainingProgram} />
+            </Switch>
+            
+      
 
-      <Router>
+          </Router>
 
-        <section className="App">
-
-              <Switch>
-                <Route exact path="/" component={Startpage} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/workoutbank" component={WorkoutBank} />
-                <Route exact path="/profilepage" component={Profilepage} />
-                <Route exact path="/trainingprogram" component={TrainingProgram} />
-              </Switch>
-              
         </section>
 
-      </Router>
+        <Footer />
+
+      </section>
+
+      
+      </>
         
    
     

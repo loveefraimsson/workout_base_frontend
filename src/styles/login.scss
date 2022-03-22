@@ -1,0 +1,63 @@
+@import "./global.scss";
+
+.loginForm {
+    border: 1px solid black;
+    width: fit-content;
+    margin: 0px auto;
+    padding: 4.5rem 6rem;
+    font-family: $textFont;
+    background-color: $beige;
+
+    label {
+        font-size: 1.5rem;
+    }
+
+    input {
+        height: 1.5rem;
+        width: 12rem;
+        margin-bottom: 1rem;
+        background-color: $greyWhite;
+        border: 1px solid black;
+
+        &:hover {
+            background-color: $white;
+        }
+
+        &:active {
+            background-color: $white;
+        }
+    }
+
+    .loginBtn {
+        background-color: $greyWhite;
+        border: 1px solid black;
+        padding: 0.5em 1em;
+        font-size: 1em;
+        font-family: $textFont;
+        margin-top: 1em;
+
+        &:hover {
+            background-color: $hoverButton;
+            cursor: pointer;
+        }
+
+        &:active {
+            background-color: $activeButton;
+            color: $white;
+        }
+    }
+
+    .errorMessage {
+        color: $errorMessageColor;
+        font-style: italic;
+        font-size: 0.75rem;
+        margin: 1.5rem auto 0rem auto;
+        width: 12rem;
+    }
+
+}
+
+
+
+
+

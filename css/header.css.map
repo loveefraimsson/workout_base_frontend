@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,OAAO,AAAC,CACJ,gBAAgB,CCEZ,OAAO,CDDX,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,aAAa,CAOjC,AAXD,AAMI,OANG,CAMH,KAAK,AAAC,CACF,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,IAAI,CACZ,MAAM,CAAE,IAAI,CACf",
+    "sources": [
+        "../src/styles/header.scss",
+        "../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "header.css"
+}
