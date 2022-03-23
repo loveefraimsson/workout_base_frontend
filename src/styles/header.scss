@@ -5,10 +5,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+ 
     .logo {
-        width: 300px;
+        width: 150px;
         height: auto;
         margin: 1rem;
     }
+
+    .toggleContainer {
+       
+        img{
+            width: 30px;
+            
+        }
+
+        .navbar-nav {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    
+
+    
 }
