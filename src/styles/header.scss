@@ -5,23 +5,56 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    height: 70px;
+    padding: 0px 1rem;
  
     .logo {
         width: 150px;
         height: auto;
-        margin: 1rem;
     }
 
     .toggleContainer {
-       
-        img{
-            width: 30px;
-            
+      
+        img {
+            width: 20px;
         }
 
+        // UL
         .navbar-nav {
             position: absolute;
+            width: 100vw;
+            min-height: 100%;
+            top: 70px;
             right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: $headingFont;
+            margin: 0px;
+            
+            padding: 90px 0px 0px 0px;
+            
+            
+            //LI
+            .navItem {
+                list-style-type: none;
+                padding: 25px 0px;
+                font-size: 2.5rem;
+            }
+
+            //LINK
+            .navLink {
+                color: $textColor;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $activeButton;
+                }
+            }
         }
     }
 

@@ -38,9 +38,13 @@ export class Header extends Component {
       buttons = (
         <section className='toggleContainer'>
 
-          
-            <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
-            {/* <img src={crossIcon} alt="" /> */}
+          {this.state.showMenu ? (
+            <img src={crossIcon} onClick={this.handleMenu} alt="" />
+          ) : <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
+
+          }
+            
+
           
 
             {this.state.showMenu ? (
@@ -54,7 +58,7 @@ export class Header extends Component {
                 </li>
 
                 <li className='navItem'>
-                  <Link className="navLink" to="/" onClick={() => localStorage.clear()}>Logout</Link>
+                  <Link className="navLink" to="/" onClick={() => localStorage.clear()}>Logga ut</Link>
                 </li>
               </ul>
               ) : null
