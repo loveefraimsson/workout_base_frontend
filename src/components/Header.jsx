@@ -17,14 +17,23 @@ export class Header extends Component {
 
   state = {
     showMenu: false,
+    animationCloseMenu: '',
+    animationShowMenu: '',
   }
   
   handleMenu = () => {
     if(this.state.showMenu === false) {
-      this.setState({ showMenu: true })
+      this.setState({ showMenu: true, animationShowMenu: "animationShowMenu", animationCloseMenu: "" })
     }
     else {
-      this.setState({ showMenu: false })
+      
+        this.setState({ animationCloseMenu: "animationCloseMenu", animationShowMenu: ""})
+      
+        setTimeout(() => {
+          this.setState({showMenu: false })
+        }, 300)
+      //this.setState({ showMenu: false, animationCloseMenu: "animationCloseMenu" })
+  
     }
   }
 
@@ -32,6 +41,8 @@ export class Header extends Component {
   render() {
 
     let buttons;
+
+    
 
     //LOGGED IN
     if(localStorage.getItem("loggedIn") === "true") {
@@ -48,7 +59,7 @@ export class Header extends Component {
           
 
             {this.state.showMenu ? (
-              <ul className='navbar-nav'>
+              <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
                 <li className='navItem'>
                   <Link className="navLink" to="/profilepage" >Profilsida</Link>           
                 </li>
