@@ -10,6 +10,9 @@ import Login from './components/Login';
 import WorkoutBank from './components/WorkoutBank';
 import TrainingProgram from './components/TrainingProgram';
 import Footer from './components/Footer';
+import Webshop from './components/Webshop';
+import ExerciseCard from './components/ExerciseCard';
+import Exercise from './components/Exercise';
 
 import './styles/App.scss';
 
@@ -23,19 +26,9 @@ const parse = require('html-react-parser');
 
 class App extends Component {
 
-  state = {
-    exerciseArray: [],
-  }
+  
 
-  /* componentDidMount = () => {
-    fetch('http://localhost:3001/exercises')
-    .then((res) => res.json())
-    .then((data) => {        
-        //console.log(data);
-        //console.log(data[0].video);
-        //this.setState({ exerciseArray: data})
-    })  
-  } */
+  
 
   
  
@@ -53,6 +46,9 @@ class App extends Component {
               <Route exact path="/workoutbank" component={WorkoutBank} />
               <Route exact path="/profilepage" component={Profilepage} />
               <Route exact path="/trainingprogram" component={TrainingProgram} />
+              <Route exact path="/webshop" component={Webshop} />
+              <Route exact path="/workoutbank/:params" component={ExerciseCard} />
+              <Route exact path="/workoutbank/:params/:params" component={Exercise} />
             </Switch>
             
       

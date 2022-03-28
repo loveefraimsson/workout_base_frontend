@@ -18,6 +18,7 @@ export class Startpage extends Component {
           <Header />
           <h2 className='welcomeTitle'>Hej {localStorage.getItem("userName")}!</h2>
           <Link to="trainingprogram">Träningsprogram</Link>
+          <Link to="webshop">Webshop</Link>
         </section>
       )
     }
