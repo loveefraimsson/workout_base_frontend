@@ -89,7 +89,7 @@ export class Header extends Component {
     
     return (
       <header className='header'>
-          <img className='logo' src={logo} alt="WorkoutBase-logo" />
+          <Link to={"/"}><img className='logo' src={logo} alt="WorkoutBase-logo" /></Link>
          
           <nav className='navbarContainer'>
               {buttons}

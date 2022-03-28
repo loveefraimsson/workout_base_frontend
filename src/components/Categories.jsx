@@ -1,6 +1,8 @@
 import {React, useState, useEffect} from 'react';
 import ExerciseCard from './ExerciseCard';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+
 
 function Categories(props) {
 
@@ -10,8 +12,9 @@ function Categories(props) {
 
   return (
     <>
-        <Link key={category} to={{pathname:`/workoutbank/` + props.category, state: {exerciseArray: exerciseArray, category: category}}} >{category}</Link> <br />
         
+        <Link key={category} to={{pathname:`/workoutbank/` + props.category, state: {exerciseArray: exerciseArray, category: category}}} >{category}</Link> <br />
+
     </>
   )
 }

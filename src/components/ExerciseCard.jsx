@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import Exercise from './Exercise';
-
+import Header from './Header';
 import { Link } from 'react-router-dom';
 
 {/* <NU></NU>
@@ -31,6 +31,7 @@ class ExerciseCard extends Component {
 
     return (
       <section>
+        <Header />
 
         {specificExercises.map((exercise) => {
           return <Link key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
