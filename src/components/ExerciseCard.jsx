@@ -33,7 +33,7 @@ class ExerciseCard extends Component {
       <section>
 
         {specificExercises.map((exercise) => {
-          return <Link key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise}}} >{exercise.title}</Link>
+          return <Link key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
         })
 
         }
