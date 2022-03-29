@@ -11,6 +11,8 @@ function Categories(props) {
     const [exerciseArray, setExerciseArray] = useState(props.exerciseArray);
   
 
+    
+
   return (
       <>
         <section className='categoryBox'>
