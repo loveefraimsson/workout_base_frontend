@@ -22,15 +22,11 @@ import {
   Route,
 } from "react-router-dom";
 
-const parse = require('html-react-parser');
+
 
 class App extends Component {
 
-  
-
-  
-
-  
+ 
  
   render() {
 
