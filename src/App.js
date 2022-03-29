@@ -1,7 +1,5 @@
 import './App.css';
 import Profilepage from './components/Profilepage';
-//import facepull from './images/facepull.webp';
-import facepull from './images/facepull.webp';
 
 import React, { Component } from 'react';
 import Header from './components/Header';

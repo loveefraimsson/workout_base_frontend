@@ -23,9 +23,9 @@ export class Exercise extends Component {
         <p>{this.state.exercise.description1}</p>
         <p>{this.state.exercise.description2}</p>
 
-        <img src={require(`./images/` + this.state.exercise.image + '.webp')}></img> <br />
+        <img src={require(`./images/exercises/` + this.state.exercise.image + '.webp')}></img> <br />
 
-        {/* {parse(this.state.exercise.video)} */}
+        {parse(this.state.exercise.video)}
       </>
     )
   }
