@@ -1,0 +1,27 @@
+@import "./global.scss";
+
+.categoryBox {
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 2rem 1rem;
+    width: 10rem;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    background-color: $beige;
+    cursor: pointer;
+    box-shadow: 5px 8px 10px #999;
+
+    &:hover {
+        background-color: $hoverButton;
+    }
+    &:active {
+        background-color: $activeButton;
+    }
+
+    .categoryLink {
+        text-decoration: none;
+        color: $textColor;
+        font-size: 2rem;
+    }
+}

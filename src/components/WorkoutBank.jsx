@@ -5,6 +5,8 @@ import ExerciseCard from './ExerciseCard';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
 
+import '../styles/workoutbank.scss';
+
 export class WorkoutBank extends Component {
 
     state = {
@@ -47,14 +49,13 @@ export class WorkoutBank extends Component {
 
 
         return (
-            <section>
+            <section className='workoutbankContainer'>
                 <Header />
                 <h1>Övningsbank</h1>
 
                 {
                     allCategories.map((category) => {
-                        return(
-                            
+                        return(                          
                             <Categories key={category} category={category} exerciseArray={this.state.exerciseArray} />
                         )
                     })

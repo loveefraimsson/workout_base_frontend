@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,aAAa,AAAC,CACV,WAAW,CCcD,MAAM,CAAE,UAAU,CDb5B,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,mBAAmB,CAC9B",
+    "sources": [
+        "../../src/styles/startpage.scss",
+        "../../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "startpage.css"
+}

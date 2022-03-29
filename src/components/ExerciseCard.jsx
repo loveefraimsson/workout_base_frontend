@@ -3,9 +3,8 @@ import Exercise from './Exercise';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 
-{/* <NU></NU>
-Ä<NDRAR>
-<JAG></JAG></NDRAR> */}
+import '../styles/exerciseCard.scss';
+
 
 
 class ExerciseCard extends Component {
@@ -30,18 +29,19 @@ class ExerciseCard extends Component {
     //console.log(specificExercises);
 
     return (
-      <section>
+      <>
         <Header />
+        <section className='exerciseContainer'>
+          {specificExercises.map((exercise) => {
+            return (
+              <section className='card'>
+                <Link className='cardLink' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
+              </section>)
+          })
 
-        {specificExercises.map((exercise) => {
-          return <Link key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
-        })
-
-        }
-  
-          
-          {/* <Link to={{pathname:`/workoutbank/` + exercise.title, state: {exercise: exercise}}} >{exercise.title}</Link> */}
-      </section>
+          }
+        </section>
+      </>
     )
   }
   
