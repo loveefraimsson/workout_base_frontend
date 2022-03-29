@@ -33,8 +33,7 @@ class Login extends Component {
             password: this.password
         }
 
-        
-
+        //Checks user against database
         fetch("http://localhost:3001/login", {
             method: "post",
             headers: {
@@ -64,15 +63,14 @@ class Login extends Component {
 
     render() {
 
+        //Redirects if user logges in
         if(this.state.isLoggedIn === true) {
             return <Redirect to="/" />
         }
         
-        
 
         return (
             <section>
-                {/* <h3>Login page</h3> */}
                     <form className='loginForm' onSubmit={this.handleSubmit}>
                         <label htmlFor="userName">Användarnamn:</label> <br />
                         <input className='inputUserName' name='userName' type="text" onChange={e => this.userName = e.target.value} /> <br />
@@ -83,9 +81,6 @@ class Login extends Component {
                         {this.printErrorMessage()}     
                     </form>
 
-                    
-
-                  {/* <p id="errorMessage"></p> */}
             </section>
         )
     }

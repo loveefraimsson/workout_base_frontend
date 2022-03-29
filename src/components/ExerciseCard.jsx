@@ -18,6 +18,7 @@ class ExerciseCard extends Component {
 
   render() {
 
+    //Pushes exercises to array if it's the clicked category
     let exerciseArray = this.state.exerciseArray;
     let specificExercises = [];
 
@@ -26,7 +27,6 @@ class ExerciseCard extends Component {
         specificExercises.push(exercise);
       }
     })
-    //console.log(specificExercises);
 
     return (
       <>
@@ -34,7 +34,7 @@ class ExerciseCard extends Component {
         <section className='exerciseContainer'>
           {specificExercises.map((exercise) => {
             return (
-              <section className='card'>
+              <section key={exercise.title} className='card'>
                 <Link className='cardLink' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
               </section>)
           })

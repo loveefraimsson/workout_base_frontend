@@ -12,18 +12,21 @@ export class Startpage extends Component {
     
     let isLoggedIn = localStorage.getItem('loggedIn');
 
+    //If user is logged in:
     if(isLoggedIn === 'true') {
       return (
         <section>
           <Header />
           <h2 className='welcomeTitle'>Hej {localStorage.getItem("userName")}!</h2>
-          <Link to="trainingprogram">Träningsprogram</Link>
+          <p>Snabbåtkomst:</p>
+          <Link to="trainingprogram">Träningsprogram</Link><br />
           <Link to="webshop">Webshop</Link>
         </section>
       )
     }
     else {  
       return (
+        //If user is logged out:
         <section>
           <Header />
           <h1 className='welcomeTitle'>Välkommen, vänligen logga in!</h1>

@@ -21,19 +21,17 @@ export class Header extends Component {
     animationShowMenu: '',
   }
   
+  //Shows and hides menu
   handleMenu = () => {
     if(this.state.showMenu === false) {
       this.setState({ showMenu: true, animationShowMenu: "animationShowMenu", animationCloseMenu: "" })
     }
-    else {
-      
+    else {    
         this.setState({ animationCloseMenu: "animationCloseMenu", animationShowMenu: ""})
       
         setTimeout(() => {
           this.setState({showMenu: false })
-        }, 300)
-      //this.setState({ showMenu: false, animationCloseMenu: "animationCloseMenu" })
-  
+        }, 300) 
     }
   }
 
@@ -41,10 +39,7 @@ export class Header extends Component {
   render() {
 
     let buttons;
-
-    
-
-    //LOGGED IN
+    //HEADER IF LOGGED IN
     if(localStorage.getItem("loggedIn") === "true") {
       buttons = (
         <section className='toggleContainer'>
@@ -54,9 +49,6 @@ export class Header extends Component {
           ) : <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
 
           }
-            
-
-          
 
             {this.state.showMenu ? (
               <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
@@ -82,7 +74,7 @@ export class Header extends Component {
       )
     }
 
-    //LOGGED OUT
+    //HEADER IF LOGGED OUT
     else {
       buttons = null;
     }
@@ -95,8 +87,7 @@ export class Header extends Component {
               {buttons}
 
           </nav>
-          
-         
+       
       </header>
     )
   }

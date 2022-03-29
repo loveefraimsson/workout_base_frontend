@@ -29,15 +29,14 @@ export class WorkoutBank extends Component {
 
         if(!this.state.loadedData) return <></>
 
+        
         let allCategories = [];
-
         let exerciseArray = this.state.exerciseArray;
         let findCategory;
 
         //Loops through the exercises to push each category in an array, checks so the category not being pushed twice
         for(let i = 0; i < this.state.exerciseArray.length; i++) {         
             findCategory = allCategories.find((allCategories) => allCategories == exerciseArray[i].category);
-
 
             if(!findCategory) {
                 allCategories.push(this.state.exerciseArray[i].category);
@@ -53,6 +52,7 @@ export class WorkoutBank extends Component {
                 <Header />
                 <h1>Övningsbank</h1>
 
+                {/* Prints all categories */}
                 {
                     allCategories.map((category) => {
                         return(                          
