@@ -1,0 +1,39 @@
+@import "./global.scss";
+
+.backButton {
+    background-color: $beige;
+    border: 1px solid black;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.74rem;
+    font-family: $textFont;
+    text-decoration: none;
+    color: $textColor;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hoverButton;
+    }
+
+    &:active {
+        background-color: $activeButton;
+    }
+}
+
+
+.favoriteButton {
+    background-color: $beige;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: $textFont;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hoverButton;
+    }
+
+    &:active {
+        background-color: $activeButton;
+    }
+    
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import '../styles/exercises.scss';
+import '../styles/exercise.scss';
 
 
 
@@ -30,7 +30,7 @@ export class Exercise extends Component {
     return (
       <>
       <Header />
-        <Link to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
+        <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <h1>{this.state.exercise.title}</h1>
 
         <button className='favoriteButton' onClick={this.favoriteMark}>Favoritmarkera</button>
