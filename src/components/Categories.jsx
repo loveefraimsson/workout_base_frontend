@@ -9,8 +9,6 @@ function Categories(props) {
 
     const [category, setCategory] = useState(props.category);
     const [exerciseArray, setExerciseArray] = useState(props.exerciseArray);
-  
-
     
 
   return (
