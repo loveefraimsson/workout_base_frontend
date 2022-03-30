@@ -1,0 +1,14 @@
+@import "./global.scss";
+
+
+.profilePage {
+    .welcomeTitleProfile {
+        font-family: $headingFont;
+        font-size: 3rem;
+        margin: 2rem 0rem 1rem 0rem;
+    }
+
+    p {
+        font-family: $textFont;
+    }
+}
