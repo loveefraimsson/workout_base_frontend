@@ -19,15 +19,27 @@ export class Exercise extends Component {
     }
 
     handleChange = (evt) => {
-      console.log("name", evt.target.name);
-      console.log("value", evt.target.value);
+      //console.log("name", evt.target.name);
+      //console.log("value", evt.target.value);
       //let exerciseTitle = this.state.exercise.title;
       //let exerciseCategory = this.state.category;
 
       this.setState({ [evt.target.name]: evt.target.value });
     }
 
-    
+    handleSubmit = (evt) => {
+      evt.preventDefault();
+
+      let exerciseTitle = this.state.title;
+      let exerciseCategory = this.state.category;
+      let sets = this.state.sets;
+      let reps = this.state.reps;
+
+      console.log("exerciseTitle", exerciseTitle);
+      console.log("exerciseCategory", exerciseCategory);
+      console.log("sets", sets);
+      console.log("reps", reps);
+    }
 
     
     favoriteMark = () => {
@@ -47,7 +59,7 @@ export class Exercise extends Component {
         <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <h1>{this.state.exercise.title}</h1>
         
-        <form className='trainingProgramForm'>
+        <form className='trainingProgramForm' onSubmit={this.handleSubmit}>
           <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
           <input name='sets' type="text" placeholder='Sets' onChange={this.handleChange} /> 
           <input name='reps' type="text" placeholder='Reps' onChange={this.handleChange} /><br />
