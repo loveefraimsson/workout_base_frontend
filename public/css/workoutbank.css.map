@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAEI,qBAFiB,CAEjB,mBAAmB,AAAC,CAChB,KAAK,CAAE,IAAI,CACd",
     "sources": [
         "../../src/styles/workoutbank.scss"
     ],

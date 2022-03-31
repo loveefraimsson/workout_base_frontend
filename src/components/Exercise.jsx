@@ -16,6 +16,7 @@ export class Exercise extends Component {
         favorite: false,
         sets: '',
         reps: '',
+        isNumber: ''
     }
 
     handleChange = (evt) => {
@@ -62,9 +63,9 @@ export class Exercise extends Component {
         <h1>{this.state.exercise.title}</h1>
         
         <form className='trainingProgramForm' onSubmit={this.handleSubmit}>
-          <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
-          <input name='sets' type="text" placeholder='Sets' onChange={this.handleChange} /> 
-          <input name='reps' type="text" placeholder='Reps' onChange={this.handleChange} /><br />
+          <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan med siffror:</p>
+          <input name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> 
+          <input name='reps' type="number" placeholder='Reps; ex. 4' onChange={this.handleChange} /><br />
           <button type='submit'>Spara</button>
         </form>
 

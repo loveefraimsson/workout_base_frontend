@@ -1,9 +1,9 @@
-import { toHaveDisplayValue } from '@testing-library/jest-dom/dist/matchers';
 import React, { Component } from 'react';
 import Header from './Header';
 import ExerciseCard from './ExerciseCard';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
+import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
 
 import '../styles/workoutbank.scss';
 
