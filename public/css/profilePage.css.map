@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDEZ,AACI,YADQ,CACR,oBAAoB,AAAC,CACjB,WAAW,CCYL,MAAM,CAAE,UAAU,CDXxB,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,mBAAmB,CAC9B,AALL,AAOI,YAPQ,CAOR,CAAC,AAAC,CACE,WAAW,CCOR,gBAAgB,CAAE,UAAU,CDNlC",
+    "sources": [
+        "../../src/styles/profilePage.scss",
+        "../../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "profilePage.css"
+}
