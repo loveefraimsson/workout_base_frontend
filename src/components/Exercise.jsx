@@ -55,6 +55,8 @@ export class Exercise extends Component {
   render() {
     return (
       <>
+       
+
       <Header />
         <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <h1>{this.state.exercise.title}</h1>
