@@ -28,7 +28,7 @@ export class Exercise extends Component {
       this.setState({ [evt.target.name]: evt.target.value });
     }
 
-    handleSubmit = (evt) => {
+    saveInProgram = (evt) => {
       evt.preventDefault();
 
       let exerciseTitle = this.state.title;
@@ -48,8 +48,25 @@ export class Exercise extends Component {
       let exerciseCategory = this.state.category;
       //console.log(exerciseTitle);
       //console.log(exerciseCategory);
-
       this.setState({ favorite: true })
+
+      let favoriteExercise = {
+        exerciseTitle: exerciseTitle,
+        exerciseCategory: exerciseCategory,
+        userName: localStorage.getItem("userName")
+      }
+
+      fetch("http://localhost:3001/savefavorite", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(favoriteExercise)
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+      }); 
 
     }
 
@@ -62,7 +79,7 @@ export class Exercise extends Component {
         <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <h1>{this.state.exercise.title}</h1>
         
-        <form className='trainingProgramForm' onSubmit={this.handleSubmit}>
+        <form className='trainingProgramForm' onSubmit={this.saveInProgram}>
           <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan med siffror:</p>
           <input name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> 
           <input name='reps' type="number" placeholder='Reps; ex. 4' onChange={this.handleChange} /><br />
