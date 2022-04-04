@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Webshop from './components/Webshop';
 import ExerciseCard from './components/ExerciseCard';
 import Exercise from './components/Exercise';
+import FavoriteExercises from './components/FavoriteExercises';
 
 import './styles/App.scss';
 
@@ -43,6 +44,7 @@ class App extends Component {
               <Route exact path="/webshop" component={Webshop} />
               <Route exact path="/workoutbank/:params" component={ExerciseCard} />
               <Route exact path="/workoutbank/:params/:params" component={Exercise} />
+              <Route exact path="/favoriteexercises" component={FavoriteExercises} />
             </Switch>
             
       

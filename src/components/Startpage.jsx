@@ -21,6 +21,7 @@ export class Startpage extends Component {
           <p>Snabbåtkomst:</p>
           <Link to="trainingprogram">Träningsprogram</Link><br />
           <Link to="webshop">Webshop</Link>
+          <Link to="favoriteexercises">Favoritövningar</Link>
         </section>
       )
     }
