@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,KAAK,CAAE,KAAK,CAAE,EAAE,CAAE,EAAE,CAAE,EAAE,AAAC,CACrB,MAAM,CAAE,eAAe,CACvB,eAAe,CAAE,QAAQ,CAK5B,AAPD,AAII,KAJC,CAID,EAAE,CAJN,KAAK,CAIG,EAAE,CAJH,KAAK,CAIR,EAAE,CAJC,KAAK,CAIJ,EAAE,CAJI,EAAE,CAIZ,EAAE,CAJQ,EAAE,CAIR,EAAE,CAJQ,EAAE,CAIhB,EAAE,CAJY,EAAE,CAIZ,EAAE,CAJY,EAAE,CAIpB,EAAE,CAJgB,EAAE,CAIhB,EAAE,AAAC,CACH,OAAO,CAAE,IAAI,CAChB",
+    "sources": [
+        "../../src/styles/favoriteExercises.scss",
+        "../../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "favoriteExercises.css"
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import '../styles/favoriteExercises.scss';
 
 export class FavoriteExercises extends Component {
 
@@ -37,19 +38,34 @@ export class FavoriteExercises extends Component {
     if(!this.state.loadedData) return <></>
 
     return (
-      <section>
+      <section className='favoriteExercisesContainer'>
         <Header />
         <h1>FavoriteExercises</h1>
+        <table className='favoriteExercises'>
 
-        {
-          this.state.favoriteExercises.map((exercise, i) => {
-            return (<>
-              <p key={exercise.exerciseTitle}>{exercise.exerciseTitle}</p>
-              <p key={i}>{exercise.exerciseCategory}</p>
-            </>
-            )
-          })
-        }
+            <thead>
+              <tr>
+                <th>Övning</th>
+                <th>Kategori</th>
+                <th>Avmakera från favorit</th>
+              </tr>
+              
+            </thead>
+
+          <tbody>
+          {
+            this.state.favoriteExercises.map((exercise, i) => {
+              return (<tr key={i} >
+                <td className='exerciseTitle' key={exercise.exerciseTitle}>{exercise.exerciseTitle}</td>
+                <td key={exercise.exerciseCategory}>{exercise.exerciseCategory}</td>
+                <td><button>Ta bort</button></td>
+              </tr>
+              )
+            })
+          }
+          </tbody>
+
+        </table>
 
       </section>
     )
