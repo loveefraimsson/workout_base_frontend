@@ -47,7 +47,7 @@ export class Exercise extends Component {
             this.setState({ favoriteMarked: true })
           }
           else {
-            this.setState({ favoriteMarked: false })
+            //this.setState({ favoriteMarked: false })
           }
         })
     }); 
@@ -112,26 +112,11 @@ export class Exercise extends Component {
   render() {
     if(!this.state.loadedData) return <></>
 
-    
-
-
-
-
-    /* favoriteExercises.map((exercise) => {
-      let findExercise = favoriteExercises.find((exercise) => exercise.exerciseTitle === this.state.exercise.title);
-      console.log("findExercise", findExercise);
-    }) */
-
-    
-
-    
-    
+  
 
     return (
       <>
        
-      
-
       <Header />
         <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <h1>{this.state.exercise.title}</h1>
@@ -143,7 +128,12 @@ export class Exercise extends Component {
           <button type='submit'>Spara</button>
         </form>
 
-        <button className='favoriteButton' onClick={this.favoriteMark}>Favoritmarkera</button>
+        {this.state.favoriteMarked ? (
+          <button className='favoriteButton'>Ta bort favoritmarkering</button>
+        ): <button className='favoriteButton' onClick={this.favoriteMark}>Favoritmarkera</button>
+
+        }
+
 
         <p>{this.state.exercise.description1}</p>
         <p>{this.state.exercise.description2}</p>
