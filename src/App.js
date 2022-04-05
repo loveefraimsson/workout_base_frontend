@@ -25,9 +25,25 @@ import {
 
 class App extends Component {
 
- 
+  state = {
+    loadedData: false,
+    exerciseArray: [],
+    
+  }
+
+  componentDidMount = () => {
+    fetch('http://localhost:3001/exercises')
+    .then((res) => res.json())
+    .then((data) => {        
+        console.log("data från App", data);
+        //console.log(data[0].video);
+        this.setState({ loadedData: true, exerciseArray: data})
+    })  
+  }
  
   render() {
+
+    if(!this.state.loadedData) return <></>
 
     return (
       <>
@@ -44,7 +60,12 @@ class App extends Component {
               <Route exact path="/webshop" component={Webshop} />
               <Route exact path="/workoutbank/:params" component={ExerciseCard} />
               <Route exact path="/workoutbank/:params/:params" component={Exercise} />
-              <Route exact path="/favoriteexercises" component={FavoriteExercises} />
+
+              <Route path="/favoriteexercises">
+                <FavoriteExercises exerciseArrayFromApp={this.state.exerciseArray} />
+              </Route>
+
+              {/* <Route exact path="/favoriteexercises" component={FavoriteExercises} /> */}
             </Switch>
             
       

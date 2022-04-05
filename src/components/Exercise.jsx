@@ -16,7 +16,6 @@ export class Exercise extends Component {
         favoriteMarked: false,
         sets: '',
         reps: '',
-        isNumber: '',
         userName: localStorage.getItem("userName"),
         favoriteExercises: [],
         loadedData: false,
@@ -33,16 +32,17 @@ export class Exercise extends Component {
       })
       .then(res => res.json())
       .then(data => {
-          //console.log(data[0].favoriteExercises);
+          console.log("data[0].favoriteExercises", data[0].favoriteExercises);
           this.setState({ loadedData: true })
 
           let favoriteExercises = data[0].favoriteExercises;
           let title = this.state.exercise.title;
+          console.log("title", title);
 
 
           //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise to false
           favoriteExercises.map((exercise, i) => {
-            if(exercise.exerciseTitle === title) {
+            if(exercise.title === title) {
               console.log("Rätt");
               this.setState({ favoriteMarked: true })
             }
@@ -60,10 +60,16 @@ export class Exercise extends Component {
       let exerciseCategory = this.state.category;
 
       let favoriteExercise = {
-        exerciseTitle: exerciseTitle,
-        exerciseCategory: exerciseCategory,
+        title: exerciseTitle,
+        category: exerciseCategory,
+        description1: this.state.exercise.description1,
+        description2: this.state.exercise.description2,
+        image: this.state.exercise.image,
+        video: this.state.exercise.video,
         userName: localStorage.getItem("userName")
       }
+
+      console.log(favoriteExercise);
       
       //Saves exercise as favorite in database
       if(this.state.favoriteMarked === false) {

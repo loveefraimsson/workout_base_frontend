@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 import '../styles/favoriteExercises.scss';
 
 
@@ -9,7 +10,8 @@ export class FavoriteExercises extends Component {
   state = {
     loadedData: false,
     userName: localStorage.getItem("userName"),
-    favoriteExercises: []
+    favoriteExercises: [],
+    exerciseArrayFromApp: this.props.exerciseArrayFromApp,
   }
 
   componentDidMount = () => {
@@ -26,23 +28,22 @@ export class FavoriteExercises extends Component {
         //console.log(data[0].favoriteExercises);
         this.setState({ loadedData: true, favoriteExercises: data[0].favoriteExercises })
     }); 
-
-
-    /* fetch('http://localhost:3001/favoriteexercises', this.state.userName)
-    .then((res) => res.json())
-    .then((data) => {        
-        console.log(data);
-    })   */
   }
 
   removeFavorite = (exercise) => {
     //console.log(exercise.exerciseTitle);
 
     let objectToRemove = {
-      exerciseTitle: exercise.exerciseTitle,
-      exerciseCategory: exercise.exerciseCategory,
+      title: exercise.title,
+      category: exercise.category,
+      description1: exercise.description1,
+      description2: exercise.description2,
+      image: exercise.image,
+      video: exercise.video,
       userName: this.state.userName
     }
+
+    console.log(objectToRemove);
 
     fetch("http://localhost:3001/removeexercise", {
       method: "post",
@@ -56,7 +57,6 @@ export class FavoriteExercises extends Component {
         console.log("data", data);
         this.setState({ favoriteExercises: data })
     });
-
   }
 
 
@@ -67,14 +67,14 @@ export class FavoriteExercises extends Component {
     return (
       <section className='favoriteExercisesContainer'>
         <Header />
-        <h1>FavoriteExercises</h1>
+        <h1>Här är dina favoritmarkerade övningar:</h1>
         <table className='favoriteExercises'>
 
             <thead>
               <tr>
                 <th>Övning</th>
                 <th>Kategori</th>
-                <th>Avmakera från favorit</th>
+                <th>Avmarkera från favoritlista</th>
               </tr>
               
             </thead>
@@ -83,8 +83,11 @@ export class FavoriteExercises extends Component {
           {
             this.state.favoriteExercises.map((exercise, i) => {
               return (<tr key={i} >
-                <td className='exerciseTitle' key={exercise.exerciseTitle}>{exercise.exerciseTitle}</td>
-                <td key={exercise.exerciseCategory}>{exercise.exerciseCategory}</td>
+
+                <td className='exerciseTitle' key={exercise.title}><Link to={{pathname:`/workoutbank/` + exercise.category + "/" + exercise.title, state: {exercise: exercise, category: exercise.category, favoriteMarked: true}}} >{exercise.title}</Link></td>
+                
+                
+                <td key={exercise.category}>{exercise.category}</td>
                 <td><button onClick={() => this.removeFavorite(exercise)}>Ta bort</button></td>
               </tr>
               )
