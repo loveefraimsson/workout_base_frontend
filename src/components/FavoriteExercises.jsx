@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header';
 import '../styles/favoriteExercises.scss';
 
+
+
 export class FavoriteExercises extends Component {
 
   state = {
@@ -21,7 +23,7 @@ export class FavoriteExercises extends Component {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data[0].favoriteExercises);
+        //console.log(data[0].favoriteExercises);
         this.setState({ loadedData: true, favoriteExercises: data[0].favoriteExercises })
     }); 
 
@@ -32,6 +34,31 @@ export class FavoriteExercises extends Component {
         console.log(data);
     })   */
   }
+
+  removeFavorite = (exercise) => {
+    //console.log(exercise.exerciseTitle);
+
+    let objectToRemove = {
+      exerciseTitle: exercise.exerciseTitle,
+      exerciseCategory: exercise.exerciseCategory,
+      userName: this.state.userName
+    }
+
+    fetch("http://localhost:3001/removeexercise", {
+      method: "post",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(objectToRemove)
+      })
+    .then(res => res.json())
+    .then(data => {
+        console.log("data", data);
+        this.setState({ favoriteExercises: data })
+    });
+
+  }
+
 
   render() {
 
@@ -58,7 +85,7 @@ export class FavoriteExercises extends Component {
               return (<tr key={i} >
                 <td className='exerciseTitle' key={exercise.exerciseTitle}>{exercise.exerciseTitle}</td>
                 <td key={exercise.exerciseCategory}>{exercise.exerciseCategory}</td>
-                <td><button>Ta bort</button></td>
+                <td><button onClick={() => this.removeFavorite(exercise)}>Ta bort</button></td>
               </tr>
               )
             })

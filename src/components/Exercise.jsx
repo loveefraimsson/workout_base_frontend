@@ -30,55 +30,77 @@ export class Exercise extends Component {
           "Content-Type": "application/json",
       },
       body: JSON.stringify({userName: this.state.userName})
-    })
-    .then(res => res.json())
-    .then(data => {
-        //console.log(data[0].favoriteExercises);
-        this.setState({ loadedData: true })
+      })
+      .then(res => res.json())
+      .then(data => {
+          //console.log(data[0].favoriteExercises);
+          this.setState({ loadedData: true })
 
-        let favoriteExercises = data[0].favoriteExercises;
-        let title = this.state.exercise.title;
+          let favoriteExercises = data[0].favoriteExercises;
+          let title = this.state.exercise.title;
 
 
-        //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise to false
-        favoriteExercises.map((exercise, i) => {
-          if(exercise.exerciseTitle === title) {
-            console.log("Rätt");
-            this.setState({ favoriteMarked: true })
-          }
-          else {
-            //this.setState({ favoriteMarked: false })
-          }
-        })
-    }); 
+          //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise to false
+          favoriteExercises.map((exercise, i) => {
+            if(exercise.exerciseTitle === title) {
+              console.log("Rätt");
+              this.setState({ favoriteMarked: true })
+            }
+            else {
+              //this.setState({ favoriteMarked: false })
+            }
+          })
+      }); 
     }
 
 
     
-    favoriteMark = () => {
+    favoriteMarkToggle = () => {
       let exerciseTitle = this.state.exercise.title;
       let exerciseCategory = this.state.category;
-
-      this.setState({ favoriteMarked: true })
 
       let favoriteExercise = {
         exerciseTitle: exerciseTitle,
         exerciseCategory: exerciseCategory,
         userName: localStorage.getItem("userName")
       }
+      
+      //Saves exercise as favorite in database
+      if(this.state.favoriteMarked === false) {
 
-      fetch("http://localhost:3001/savefavorite", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(favoriteExercise)
-      })
-      .then(res => res.json())
-      .then(data => {
-          console.log(data);
-      }); 
+        this.setState({ favoriteMarked: true })
 
+        fetch("http://localhost:3001/savefavorite", {
+          method: "post",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(favoriteExercise)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("data", data);
+            //this.setState({ favoriteExercises: data })
+        });
+      }
+
+      //Removes exercise from favorite in database
+      else {
+        this.setState({ favoriteMarked: false });
+
+        fetch("http://localhost:3001/removeexercise", {
+          method: "post",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(favoriteExercise)
+        })
+        .then(res => res.json())
+        .then(data => {
+            //console.log("data", data);
+        });
+
+      }
     }
 
 
@@ -129,8 +151,8 @@ export class Exercise extends Component {
         </form>
 
         {this.state.favoriteMarked ? (
-          <button className='favoriteButton'>Ta bort favoritmarkering</button>
-        ): <button className='favoriteButton' onClick={this.favoriteMark}>Favoritmarkera</button>
+          <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Ta bort favoritmarkering</button>
+        ): <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Favoritmarkera</button>
 
         }
 
