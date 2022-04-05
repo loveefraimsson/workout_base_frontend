@@ -12,7 +12,7 @@ class ExerciseCard extends Component {
   state = {
     category: this.props.location.state.category,
     exerciseArray: this.props.location.state.exerciseArray,
-
+    oneExercise: this.props.location.state.oneExercise,
   }
 
 
@@ -31,11 +31,12 @@ class ExerciseCard extends Component {
     return (
       <>
         <Header />
+        <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
         <section className='exerciseContainer'>
           {specificExercises.map((exercise) => {
             return (
               <section key={exercise.title} className='card'>
-                <Link className='cardLink' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category}}} >{exercise.title}</Link>
+                <Link className='cardLink' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >{exercise.title}</Link>
               </section>)
           })
 

@@ -4,6 +4,7 @@ import ExerciseCard from './ExerciseCard';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
 import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
+import Loader from './Loader';
 
 import '../styles/workoutbank.scss';
 
@@ -27,7 +28,7 @@ export class WorkoutBank extends Component {
     render() {
 
 
-        if(!this.state.loadedData) return <></>
+        if(!this.state.loadedData) return <Loader />
 
         
         let allCategories = [];

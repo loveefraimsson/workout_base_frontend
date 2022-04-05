@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import '../styles/exercise.scss';
+import Loader from './Loader';
 
 
 
@@ -13,6 +14,7 @@ export class Exercise extends Component {
         exercise: this.props.location.state.exercise,
         title: this.props.location.state.exercise.title,
         category: this.props.location.state.category,
+        exerciseArray: this.props.location.state.exerciseArray,
         favoriteMarked: false,
         sets: '',
         reps: '',
@@ -146,7 +148,8 @@ export class Exercise extends Component {
       <>
        
       <Header />
-        <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
+        {/* <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link> */}
+        <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
         <h1>{this.state.exercise.title}</h1>
         
         <form className='trainingProgramForm' onSubmit={this.saveInProgram}>

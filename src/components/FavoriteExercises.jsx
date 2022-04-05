@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import '../styles/favoriteExercises.scss';
+import Loader from './Loader';
 
 
 
@@ -62,7 +63,7 @@ export class FavoriteExercises extends Component {
 
   render() {
 
-    if(!this.state.loadedData) return <></>
+    if(!this.state.loadedData) return <Loader />
 
     return (
       <section className='favoriteExercisesContainer'>
