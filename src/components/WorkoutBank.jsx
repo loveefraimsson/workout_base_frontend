@@ -13,10 +13,11 @@ export class WorkoutBank extends Component {
     state = {
         loadedData: false,
         exerciseArray: [],
+        url: this.props.url,
     }
 
     componentDidMount = () => {
-        fetch('http://localhost:3001/exercises')
+        fetch(this.state.url + 'exercises')
         .then((res) => res.json())
         .then((data) => {        
             //console.log(data);

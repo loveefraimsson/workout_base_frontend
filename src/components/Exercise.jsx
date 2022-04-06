@@ -42,7 +42,7 @@ export class Exercise extends Component {
           console.log("title", title);
 
 
-          //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise to false
+          //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise not. Doing this to render the right button
           favoriteExercises.map((exercise, i) => {
             if(exercise.title === title) {
               console.log("Rätt");
@@ -61,6 +61,7 @@ export class Exercise extends Component {
       let exerciseTitle = this.state.exercise.title;
       let exerciseCategory = this.state.category;
 
+      //Sets the exercise to save in databse to object
       let favoriteExercise = {
         title: exerciseTitle,
         category: exerciseCategory,
@@ -71,7 +72,7 @@ export class Exercise extends Component {
         userName: localStorage.getItem("userName")
       }
 
-      console.log(favoriteExercise);
+      //console.log(favoriteExercise);
       
       //Saves exercise as favorite in database
       if(this.state.favoriteMarked === false) {
@@ -87,7 +88,7 @@ export class Exercise extends Component {
         })
         .then(res => res.json())
         .then(data => {
-            console.log("data", data);
+            //console.log("data", data);
             //this.setState({ favoriteExercises: data })
         });
       }
@@ -148,7 +149,6 @@ export class Exercise extends Component {
       <>
        
       <Header />
-        {/* <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link> */}
         <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
         <h1>{this.state.exercise.title}</h1>
         

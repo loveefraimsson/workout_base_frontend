@@ -61,6 +61,10 @@ export class Header extends Component {
                 </li>
 
                 <li className='navItem'>
+                  <Link className="navLink" to="/webshop" >Webshop</Link>
+                </li>
+
+                <li className='navItem'>
                   <Link className="navLink" to="/" onClick={() => localStorage.clear()}>Logga ut</Link>
                 </li>
               </ul>

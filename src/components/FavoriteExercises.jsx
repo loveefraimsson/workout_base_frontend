@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import '../styles/favoriteExercises.scss';
-import Loader from './Loader';
 
 
 
@@ -13,11 +12,12 @@ export class FavoriteExercises extends Component {
     userName: localStorage.getItem("userName"),
     favoriteExercises: [],
     exerciseArrayFromApp: this.props.exerciseArrayFromApp,
+    url: this.props.url
   }
 
   componentDidMount = () => {
 
-    fetch("http://localhost:3001/favoriteexercises", {
+    fetch(this.state.url + "favoriteexercises", {
       method: "post",
       headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ export class FavoriteExercises extends Component {
 
     console.log(objectToRemove);
 
-    fetch("http://localhost:3001/removeexercise", {
+    fetch(this.state.url + "removeexercise", {
       method: "post",
       headers: {
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ export class FavoriteExercises extends Component {
 
   render() {
 
-    if(!this.state.loadedData) return <Loader />
+    if(!this.state.loadedData) return <></>
 
     return (
       <section className='favoriteExercisesContainer'>

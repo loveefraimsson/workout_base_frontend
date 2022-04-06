@@ -30,11 +30,12 @@ class Login extends Component {
 
         const userData = {
             userName: this.userName,
-            password: this.password
+            password: this.password,
+            url: this.props.url
         }
 
         //Checks user against database
-        fetch("http://localhost:3001/login", {
+        fetch(this.state.url + "login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
@@ -51,11 +52,10 @@ class Login extends Component {
                 localStorage.setItem("userName", data.userName);
                 this.setState({ isLoggedIn: true, loggedInUser: data.userName });
             }
-            //If the loginin details is wrong
+            //If the login details is wrong
             else {
                 localStorage.setItem("loggedIn", false);
                 this.setState({ isLoggedIn: false, printErrorMessage: true });
-                //document.getElementById("errorMessage").insertAdjacentHTML("beforeend", "<p>Fel</p>")
             }
         });      
 
@@ -67,19 +67,18 @@ class Login extends Component {
         if(this.state.isLoggedIn === true) {
             return <Redirect to="/" />
         }
-        
 
         return (
             <section>
-                    <form className='loginForm' onSubmit={this.handleSubmit}>
-                        <label htmlFor="userName">Användarnamn:</label> <br />
-                        <input className='inputUserName' name='userName' type="text" onChange={e => this.userName = e.target.value} /> <br />
-                        <label htmlFor="password">Lösenord:</label> <br />
-                        <input className='inputPassword' name='password' type="text" onChange={e => this.password = e.target.value} /> <br />
-                        <button className='loginBtn' type='submit'>Logga in</button>
+                <form className='loginForm' onSubmit={this.handleSubmit}>
+                    <label htmlFor="userName">Användarnamn:</label> <br />
+                    <input className='inputUserName' name='userName' type="text" onChange={e => this.userName = e.target.value} /> <br />
+                    <label htmlFor="password">Lösenord:</label> <br />
+                    <input className='inputPassword' name='password' type="text" onChange={e => this.password = e.target.value} /> <br />
+                    <button className='loginBtn' type='submit'>Logga in</button>
 
-                        {this.printErrorMessage()}     
-                    </form>
+                    {this.printErrorMessage()}     
+                </form>
 
             </section>
         )
