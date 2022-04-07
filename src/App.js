@@ -24,8 +24,23 @@ import {
 
 class App extends Component {
 
+  state = {
+    loadedData: false,
+    exerciseArray: [],
+  }
+
+  componentDidMount = () => {
+    fetch('http://localhost:3001/exercises')
+    .then((res) => res.json())
+    .then((data) => {        
+        console.log(data);
+        this.setState({ loadedData: true, exerciseArray: data})
+    })  
+  }
+
   
   render() {
+    if(!this.state.loadedData) return <></>
 
     let url = "http://localhost:3001/";
 
@@ -46,7 +61,12 @@ class App extends Component {
                 <WorkoutBank url={url} />
               </Route>
 
-              <Route exact path="/profilepage" component={Profilepage} />
+              {/* <Route exact path="/profilepage" component={Profilepage} /> */}
+              <Route exact path="/profilepage">
+                <Profilepage url={url} exerciseArray={this.state.exerciseArray} />
+              </Route>
+
+
               {/* <Route exact path="/trainingprogram" component={TrainingProgram} /> */}
               <Route exact path="/trainingprogram">
                 <TrainingProgram url={url} />
@@ -63,7 +83,7 @@ class App extends Component {
 
               {/* <Route exact path="/favoriteexercises" component={FavoriteExercises} /> */}
               <Route exact path="/favoriteexercises">
-                <FavoriteExercises url={url} />
+                <FavoriteExercises url={url} exerciseArray={this.state.exerciseArray} />
               </Route>
             </Switch>
             

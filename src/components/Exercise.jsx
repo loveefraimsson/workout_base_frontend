@@ -24,6 +24,7 @@ export class Exercise extends Component {
       loadedData: false,
       isFilled: '',
       savedInProgram: false,
+      from: this.props.location.state.from,
   }
 
   //Gets all favorite exercises
@@ -142,7 +143,7 @@ export class Exercise extends Component {
         sets: this.state.sets,
         reps: this.state.reps,
         comments: this.state.comments,
-        userName: this.state.userName
+        userName: this.state.userName,
       }
       console.log(addThisExercise);
       this.setState({ isFilled: true });
@@ -183,7 +184,16 @@ export class Exercise extends Component {
       else {
         return <p></p>
       }
+  }
 
+  //Returns the right link for back-button depending on where the user came from
+  backLink = () => {
+    if(this.state.from === "exercisecard") {
+      return "/workoutbank/" + this.state.exercise.category;
+    }
+    else if (this.state.from === "favorite") {
+      return "/favoriteexercises";
+    }
   }
 
   render() {
@@ -195,7 +205,10 @@ export class Exercise extends Component {
       <>
        
       <Header />
-        <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
+        {/* <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link> */} 
+
+        <Link className='backButton' to={{pathname: this.backLink(), state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
+        
         <h1>{this.state.exercise.title}</h1>
         
         <form className='trainingProgramForm' onSubmit={this.saveInProgram}>

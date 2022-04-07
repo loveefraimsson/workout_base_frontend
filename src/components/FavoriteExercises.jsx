@@ -11,7 +11,7 @@ export class FavoriteExercises extends Component {
     loadedData: false,
     userName: localStorage.getItem("userName"),
     favoriteExercises: [],
-    exerciseArrayFromApp: this.props.exerciseArrayFromApp,
+    exerciseArray: this.props.exerciseArray,
     url: this.props.url
   }
 
@@ -85,7 +85,7 @@ export class FavoriteExercises extends Component {
             this.state.favoriteExercises.map((exercise, i) => {
               return (<tr key={i} >
 
-                <td className='exerciseTitle' key={exercise.title}><Link to={{pathname:`/workoutbank/` + exercise.category + "/" + exercise.title, state: {exercise: exercise, category: exercise.category, favoriteMarked: true}}} >{exercise.title}</Link></td>
+                <td className='exerciseTitle' key={exercise.title}><Link to={{pathname:`/workoutbank/` + exercise.category + "/" + exercise.title, state: {exercise: exercise, category: exercise.category, favoriteMarked: true, exerciseArray: this.state.exerciseArray, from: "favorite"}}} >{exercise.title}</Link></td>
                 
                 
                 <td key={exercise.category}>{exercise.category}</td>
