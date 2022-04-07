@@ -13,7 +13,7 @@ class Login extends Component {
         userName: '',
         password: '',
         isLoggedIn: '',
-        printErrorMessage: ''
+        printErrorMessage: '',
     }
 
     printErrorMessage = () => {
@@ -31,11 +31,10 @@ class Login extends Component {
         const userData = {
             userName: this.userName,
             password: this.password,
-            url: this.props.url
         }
 
         //Checks user against database
-        fetch(this.state.url + "login", {
+        fetch("http://localhost:3001/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

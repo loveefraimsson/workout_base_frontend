@@ -7,6 +7,8 @@ import '../styles/startpage.scss';
 
 
 export class Startpage extends Component {
+
+
   
   render() {
     

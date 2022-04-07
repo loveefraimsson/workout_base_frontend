@@ -34,18 +34,18 @@ export class Exercise extends Component {
       })
       .then(res => res.json())
       .then(data => {
-          console.log("data[0].favoriteExercises", data[0].favoriteExercises);
+          //console.log("data[0].favoriteExercises", data[0].favoriteExercises);
           this.setState({ loadedData: true })
 
           let favoriteExercises = data[0].favoriteExercises;
           let title = this.state.exercise.title;
-          console.log("title", title);
+          //console.log("title", title);
 
 
           //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise not. Doing this to render the right button
           favoriteExercises.map((exercise, i) => {
             if(exercise.title === title) {
-              console.log("Rätt");
+              //console.log("Rätt");
               this.setState({ favoriteMarked: true })
             }
             else {
@@ -129,15 +129,27 @@ export class Exercise extends Component {
     saveInProgram = (evt) => {
       evt.preventDefault();
 
-      let exerciseTitle = this.state.title;
-      let exerciseCategory = this.state.category;
-      let sets = this.state.sets;
-      let reps = this.state.reps;
+      let addThisExercise = {
+        title: this.state.title,
+        category: this.state.category,
+        sets: this.state.sets,
+        reps: this.state.reps,
+        userName: this.state.userName
+      }
+      console.log(addThisExercise);
 
-      console.log("exerciseTitle", exerciseTitle);
-      console.log("exerciseCategory", exerciseCategory);
-      console.log("sets", sets);
-      console.log("reps", reps);
+      fetch("http://localhost:3001/addinprogram", {
+          method: "post",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addThisExercise)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("data", data);
+            
+        });
     }
 
   render() {
