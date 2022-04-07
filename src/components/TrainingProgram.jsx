@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import '../styles/trainingProgram.scss';
 
 export class TrainingProgram extends Component {
 
