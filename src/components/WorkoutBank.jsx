@@ -12,11 +12,10 @@ export class WorkoutBank extends Component {
 
     state = {
         loadedData: false,
-        exerciseArray: [],
-        url: this.props.url,
+        exerciseArray: this.props.exerciseArray,
     }
 
-    componentDidMount = () => {
+    /* componentDidMount = () => {
         fetch(this.state.url + 'exercises')
         .then((res) => res.json())
         .then((data) => {        
@@ -24,12 +23,12 @@ export class WorkoutBank extends Component {
             //console.log(data[0].video);
             this.setState({ loadedData: true, exerciseArray: data})
         })  
-      }
+    } */
 
     render() {
 
 
-        if(!this.state.loadedData) return <Loader />
+       /*  if(!this.state.loadedData) return <Loader /> */
 
         
         let allCategories = [];

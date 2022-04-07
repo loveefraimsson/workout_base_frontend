@@ -58,12 +58,12 @@ class App extends Component {
 
               {/* <Route exact path="/workoutbank" component={WorkoutBank} /> */}
               <Route exact path="/workoutbank">
-                <WorkoutBank url={url} />
+                <WorkoutBank exerciseArray={this.state.exerciseArray} />
               </Route>
 
               {/* <Route exact path="/profilepage" component={Profilepage} /> */}
               <Route exact path="/profilepage">
-                <Profilepage url={url} exerciseArray={this.state.exerciseArray} />
+                <Profilepage exerciseArray={this.state.exerciseArray} />
               </Route>
 
 
