@@ -20,13 +20,35 @@ export class TrainingProgram extends Component {
           })
           .then(res => res.json())
           .then(data => {
-              console.log("traningprogram from DB:", data);
+              //console.log("traningprogram from DB:", data);
               this.setState({ loadedData: true, trainingProgram: data })
           });
     }
 
     removeFromProgram = (exercise) => {
-        console.log(exercise);
+    
+        let exerciseToRemove = {
+            title: exercise.title,
+            category: exercise.category,
+            sets: exercise.sets,
+            reps: exercise.reps,
+            userName: this.state.userName
+        }
+        console.log(exerciseToRemove);
+
+        fetch(this.state.url + "removefromtrainingprogram", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(exerciseToRemove)
+            })
+          .then(res => res.json())
+          .then(data => {
+              console.log("data tillbaka", data);
+              this.setState({ trainingProgram: data })
+          });
+
     }
 
 
