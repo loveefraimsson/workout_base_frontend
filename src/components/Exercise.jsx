@@ -18,6 +18,7 @@ export class Exercise extends Component {
       favoriteMarked: false,
       sets: null,
       reps: null,
+      comments: null,
       userName: localStorage.getItem("userName"),
       favoriteExercises: [],
       loadedData: false,
@@ -133,13 +134,14 @@ export class Exercise extends Component {
 
     // if(this.state.sets != null && this.state.sets != " " && this.state.reps != null && this.state.reps != " ") {
     
-    if(this.state.sets && this.state.reps) {
+    if(this.state.sets && this.state.reps && this.state.comments) {
       console.log("Inte null");
       let addThisExercise = {
         title: this.state.title,
         category: this.state.category,
         sets: this.state.sets,
         reps: this.state.reps,
+        comments: this.state.comments,
         userName: this.state.userName
       }
       console.log(addThisExercise);
@@ -158,6 +160,7 @@ export class Exercise extends Component {
             this.setState({ savedInProgram: true });
             document.getElementById("inputSets").value = "";
             document.getElementById("inputReps").value = "";
+            document.getElementById("inputComments").value = "";
         });
       
     }
@@ -196,9 +199,10 @@ export class Exercise extends Component {
         <h1>{this.state.exercise.title}</h1>
         
         <form className='trainingProgramForm' onSubmit={this.saveInProgram}>
-          <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan med siffror:</p>
-          <input id="inputSets" name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> 
+          <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
+          <input id="inputSets" name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> <br />
           <input id="inputReps" name='reps' type="number" placeholder='Reps; ex. 4' onChange={this.handleChange} /><br />
+          <textarea id="inputComments" name="comments" placeholder='Kommentarer...' cols="20" rows="5" onChange={this.handleChange}></textarea> <br />
           <button type='submit'>Spara</button>
           {this.printErrorMessage()}  
         </form>
