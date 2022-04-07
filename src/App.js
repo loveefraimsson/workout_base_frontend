@@ -47,7 +47,10 @@ class App extends Component {
               </Route>
 
               <Route exact path="/profilepage" component={Profilepage} />
-              <Route exact path="/trainingprogram" component={TrainingProgram} />
+              {/* <Route exact path="/trainingprogram" component={TrainingProgram} /> */}
+              <Route exact path="/trainingprogram">
+                <TrainingProgram url={url} />
+              </Route>
 
               {/* <Route exact path="/webshop" component={Webshop} /> */}
               <Route exact path="/webshop">
