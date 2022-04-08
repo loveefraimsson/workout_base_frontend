@@ -15,12 +15,15 @@ Jag fick denna idé då jag själv är väldigt intresserad av träning och när
 
 För att logga in på sidan finns i nuläget två stycken användare som visar på att sidan är dynamisk. Man kan alltså i framtiden, om man skulle vilja, lägga till fler användare eller skapa en funktion för att lägga till nya användare.
 
+```bash
 Användare 1 användarnamn: Sanna
 Användare 1 lösenord: kattenbus
+```
 
+```bash
 Användare 2 användarnamn: Peter
 Användare 2 lösenord: hundenbus
-
+```
 
 ## För att köra projektet lokalt:
 
