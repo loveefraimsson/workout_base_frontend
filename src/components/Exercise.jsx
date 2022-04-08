@@ -135,7 +135,7 @@ export class Exercise extends Component {
 
     // if(this.state.sets != null && this.state.sets != " " && this.state.reps != null && this.state.reps != " ") {
     
-    if(this.state.sets && this.state.reps && this.state.comments) {
+    if(this.state.sets && this.state.reps) {
       console.log("Inte null");
       let addThisExercise = {
         title: this.state.title,
@@ -158,7 +158,7 @@ export class Exercise extends Component {
         .then(res => res.json())
         .then(data => {
             console.log("data", data);
-            this.setState({ savedInProgram: true });
+            this.setState({ savedInProgram: true, sets: null, reps: null, comments: null });
             document.getElementById("inputSets").value = "";
             document.getElementById("inputReps").value = "";
             document.getElementById("inputComments").value = "";
