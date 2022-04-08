@@ -68,6 +68,9 @@ export class FavoriteExercises extends Component {
     return (
       <section className='favoriteExercisesContainer'>
         <Header />
+
+        <Link className='backButton' to="/profilepage">Tillbaka</Link>
+
         <h1>Här är dina favoritmarkerade övningar:</h1>
         <table className='favoriteExercises'>
 

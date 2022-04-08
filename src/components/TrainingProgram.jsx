@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import '../styles/trainingProgram.scss';
+import { Link } from 'react-router-dom';
 
 export class TrainingProgram extends Component {
 
@@ -60,6 +61,9 @@ export class TrainingProgram extends Component {
       return (
         <section className='trainingProgramContainer'>
           <Header />
+
+          <Link className='backButton' to="/profilepage">Tillbaka</Link>
+
           <h2>Här ser du ditt träningsprogram som du har skapat!</h2>
 
           <table className='trainingProgram'>
