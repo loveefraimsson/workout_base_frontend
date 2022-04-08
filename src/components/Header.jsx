@@ -31,8 +31,14 @@ export class Header extends Component {
       
         setTimeout(() => {
           this.setState({showMenu: false })
-        }, 300) 
+        }, 300)
+
+        //this.setState({showMenu: false });
     }
+  }
+
+  logout = () => {
+    this.setState({showMenu: false });
   }
 
  
@@ -65,7 +71,7 @@ export class Header extends Component {
                 </li>
 
                 <li className='navItem'>
-                  <Link className="navLink" to="/" onClick={() => localStorage.clear()}>Logga ut</Link>
+                  <Link className="navLink" to="/" onClick={() => localStorage.clear() + this.logout()}>Logga ut</Link>
                 </li>
               </ul>
               ) : null
