@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import '../styles/favoriteExercises.scss';
+import { fetchFavorite } from './fetchFavorite';
 
 
 
@@ -17,6 +18,16 @@ export class FavoriteExercises extends Component {
 
   componentDidMount = () => {
 
+    /* let userName = {userName: this.state.userName}
+    console.log("userName", userName);
+    
+    fetchFavorite((userName, cb) => {
+      this.setState({ favoriteExercises: cb })
+    });
+    
+    this.setState({loadedData: true}); */
+
+
     fetch(this.state.url + "favoriteexercises", {
       method: "post",
       headers: {
@@ -28,7 +39,7 @@ export class FavoriteExercises extends Component {
     .then(data => {
         //console.log(data[0].favoriteExercises);
         this.setState({ loadedData: true, favoriteExercises: data[0].favoriteExercises })
-    }); 
+    });
   }
 
   removeFavorite = (exercise) => {
