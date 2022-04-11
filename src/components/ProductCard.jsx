@@ -9,10 +9,17 @@ export class ProductCard extends Component {
 
     state = {
         product: this.props.product,
+        numberInCart: ''
     }
 
     addInCart = (product) => {
-        addToCart(product)
+        addToCart(product);
+
+        let productsInCart = JSON.parse(localStorage.getItem("cart"));
+        console.log("products.length", productsInCart.length);
+        this.props.updateCartNumber(productsInCart);
+        //this.setState({ numberInCart: })
+        
     }
 
     render() {
@@ -22,7 +29,9 @@ export class ProductCard extends Component {
         return (
             <section className='productCard'>
                 <img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
+
                 <Link className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}} >{name}</Link>
+                
             
                 <section className='buySection'>
                     <p>{price}</p>

@@ -20,7 +20,9 @@ export class Header extends Component {
     showMenu: false,
     animationCloseMenu: '',
     animationShowMenu: '',
+    numberInCart: ''
   }
+
   
   //Shows and hides menu
   handleMenu = () => {
@@ -50,7 +52,7 @@ export class Header extends Component {
     if(localStorage.getItem("loggedIn") === "true") {
       buttons = (
         <section className='nav'>
-          <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" /></Link>
+          
           <section className='toggleContainer'>
 
             {this.state.showMenu ? (

@@ -10,11 +10,23 @@ export class Product extends Component {
 
     state = {
         product: this.props.location.state.product,
+        numberInCart: '',
+        from: this.props.location.state.from,
+        
+    }
+
+    componentDidMount = () => {
+        let productsInCart = JSON.parse(localStorage.getItem("cart"));
+        this.setState({ numberInCart: productsInCart.length })
     }
 
     addInCart = (product) => {
-        addToCart(product)
+        addToCart(product);
+        let productsInCart = JSON.parse(localStorage.getItem("cart"));
+        this.setState({ numberInCart: productsInCart.length })
     }
+
+    
 
     render() {
 
@@ -23,8 +35,14 @@ export class Product extends Component {
         return (
             <section className='product'>
                 <Header />
+                <div className='cartSection'>
 
-                <Link className='backButton' to={"/webshop"} >Tillbaka</Link>
+                    {/* <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span> */}
+                    <Link className='productCardLink' to={{pathname: "/cart" , state: {from: "product", currentProduct: this.state.product}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span>
+                
+                </div>
+
+                <Link className='backButton' to={"/webshop"} >Tillbaka till webshopen</Link>
                 <h2>{name}</h2>
                 <p>{category}</p>
 
