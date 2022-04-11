@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import { Link } from 'react-router-dom';
 import cart from './images/cart.png';
 
 import '../styles/product.scss';
@@ -17,6 +18,8 @@ export class Product extends Component {
         return (
             <section className='product'>
                 <Header />
+
+                <Link className='backButton' to={"/webshop"} >Tillbaka</Link>
                 <h2>{name}</h2>
                 <p>{category}</p>
 

@@ -17,7 +17,7 @@ export class Webshop extends Component {
     fetch(this.state.url + 'webshop')
     .then((res) => res.json())
     .then((data) => {        
-        console.log(data);
+        //console.log(data);
         this.setState({ loadedData: true, products: data});
     
     }) 

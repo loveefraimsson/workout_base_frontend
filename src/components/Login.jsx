@@ -49,6 +49,7 @@ class Login extends Component {
            if(data.code === "Success") {
                 localStorage.setItem("loggedIn", true);
                 localStorage.setItem("userName", data.userName);
+                localStorage.setItem("cart", "[]");
                 this.setState({ isLoggedIn: true, loggedInUser: data.userName });
             }
             //If the login details is wrong

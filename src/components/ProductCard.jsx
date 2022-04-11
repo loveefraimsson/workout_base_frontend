@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { addToCart } from './helperFunctions/addToCart';
 
 import cart from './images/cart.png';
 import '../styles/productCard.scss';
@@ -8,6 +9,10 @@ export class ProductCard extends Component {
 
     state = {
         product: this.props.product,
+    }
+
+    addInCart = (product) => {
+        addToCart(product)
     }
 
     render() {
@@ -21,7 +26,7 @@ export class ProductCard extends Component {
             
                 <section className='buySection'>
                     <p>{price}</p>
-                    <button className='buyBtn'>
+                    <button className='buyBtn' onClick={() => this.addInCart(this.state.product)}>
                         <p>Köp</p>
                         <img className='cartIcon' src={cart} alt="Shoppingcart" />
                     </button>
