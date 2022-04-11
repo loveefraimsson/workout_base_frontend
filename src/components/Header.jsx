@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import '../styles/header.scss';
 import '../styles/mediaQuerie.scss';
 
-import logo from "../images/logo.png";
-import hamburgerIcon from "../images/hamburgerIcon.png";
-import crossIcon from "../images/crossIcon.png";
+import logo from "./images/logo.png";
+import hamburgerIcon from "./images/hamburgerIcon.png";
+import crossIcon from "./images/crossIcon.png";
 
 import {
   BrowserRouter as Router,

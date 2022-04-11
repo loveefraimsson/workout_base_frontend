@@ -11,6 +11,7 @@ import Webshop from './components/Webshop';
 import ExerciseCard from './components/ExerciseCard';
 import Exercise from './components/Exercise';
 import FavoriteExercises from './components/FavoriteExercises';
+import Product from './components/Product';
 
 import './styles/App.scss';
 
@@ -33,7 +34,7 @@ class App extends Component {
     fetch('http://localhost:3001/exercises')
     .then((res) => res.json())
     .then((data) => {        
-        console.log(data);
+        //console.log(data);
         this.setState({ loadedData: true, exerciseArray: data})
     })  
   }
@@ -77,6 +78,11 @@ class App extends Component {
                 <Webshop url={url} />
               </Route>
 
+              <Route exact path="/webshop/:params" component={Product} />
+              {/* <Route exact path="/webshop/:params">
+                <Product />
+              </Route> */}
+
               <Route exact path="/workoutbank/:params" component={ExerciseCard} />
               <Route exact path="/workoutbank/:params/:params" component={Exercise} />
               
@@ -85,6 +91,10 @@ class App extends Component {
               <Route exact path="/favoriteexercises">
                 <FavoriteExercises url={url} exerciseArray={this.state.exerciseArray} />
               </Route>
+
+              
+
+
             </Switch>
             
       

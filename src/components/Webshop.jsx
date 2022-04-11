@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
+import ProductCard from './ProductCard';
 
 export class Webshop extends Component {
 
@@ -31,7 +32,11 @@ export class Webshop extends Component {
 
         <h2>Webshop</h2>
 
-        
+        {
+          this.state.products.map((product, i) => {
+            return <ProductCard key={product.name} product={product} />
+          }) 
+        }
 
 
           
