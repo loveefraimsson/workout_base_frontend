@@ -1,0 +1,16 @@
+@import "./global.scss";
+
+.cartContainer {
+    table, thead, th, tr, td {
+        border: 1px solid lightgray;
+        border-collapse: collapse; 
+    
+        td, th {
+            padding: 30px;
+        }
+
+        .productImage {
+            width: 100px;
+        }
+    }
+}
