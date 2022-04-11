@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/header.scss';
 import '../styles/mediaQuerie.scss';
 
+import cart from './images/cart.png';
 import logo from "./images/logo.png";
 import hamburgerIcon from "./images/hamburgerIcon.png";
 import crossIcon from "./images/crossIcon.png";
@@ -48,37 +49,40 @@ export class Header extends Component {
     //HEADER IF LOGGED IN
     if(localStorage.getItem("loggedIn") === "true") {
       buttons = (
-        <section className='toggleContainer'>
-
-          {this.state.showMenu ? (
-            <img src={crossIcon} onClick={this.handleMenu} alt="" />
-          ) : <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
-
-          }
+        <section className='nav'>
+          <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" /></Link>
+          <section className='toggleContainer'>
 
             {this.state.showMenu ? (
-              <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
-                <li className='navItem'>
-                  <Link className="navLink" to="/profilepage" >Profilsida</Link>           
-                </li>
-
-                <li className='navItem'>
-                  <Link className="navLink" to="/workoutbank" >Övningar</Link>
-                </li>
-
-                <li className='navItem'>
-                  <Link className="navLink" to="/webshop" >Webshop</Link>
-                </li>
-
-                <li className='navItem'>
-                  <Link className="navLink" to="/" onClick={() => localStorage.clear() + this.logout()}>Logga ut</Link>
-                </li>
-              </ul>
-              ) : null
+              <img src={crossIcon} onClick={this.handleMenu} alt="" />
+            ) : <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
 
             }
-          
-          
+
+              {this.state.showMenu ? (
+                <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
+                  <li className='navItem'>
+                    <Link className="navLink" to="/profilepage" >Profilsida</Link>           
+                  </li>
+
+                  <li className='navItem'>
+                    <Link className="navLink" to="/workoutbank" >Övningar</Link>
+                  </li>
+
+                  <li className='navItem'>
+                    <Link className="navLink" to="/webshop" >Webshop</Link>
+                  </li>
+
+                  <li className='navItem'>
+                    <Link className="navLink" to="/" onClick={() => localStorage.clear() + this.logout()}>Logga ut</Link>
+                  </li>
+                </ul>
+                ) : null
+
+              }
+            
+            
+          </section>
         </section>
         
       )

@@ -12,6 +12,7 @@ import ExerciseCard from './components/ExerciseCard';
 import Exercise from './components/Exercise';
 import FavoriteExercises from './components/FavoriteExercises';
 import Product from './components/Product';
+import Cart from './components/Cart';
 
 import './styles/App.scss';
 
@@ -82,6 +83,8 @@ class App extends Component {
               {/* <Route exact path="/webshop/:params">
                 <Product />
               </Route> */}
+
+              <Route exact path="/cart" component={Cart} />
 
               <Route exact path="/workoutbank/:params" component={ExerciseCard} />
               <Route exact path="/workoutbank/:params/:params" component={Exercise} />
