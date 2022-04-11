@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AACI,iBADa,CACb,EAAE,AAAA,GAAG,AAAC,CACH,UAAU,CAAE,eAAe,CAC3B,KAAK,CAAE,GAAG,CACZ",
+    "sources": [
+        "../../src/styles/Webshop.scss",
+        "../../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "Webshop.css"
+}

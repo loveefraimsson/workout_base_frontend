@@ -3,6 +3,8 @@ import Header from './Header';
 import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
 import ProductCard from './ProductCard';
 
+import '../styles/webshop.scss';
+
 export class Webshop extends Component {
 
   state = {
@@ -32,11 +34,64 @@ export class Webshop extends Component {
 
         <h2>Webshop</h2>
 
-        {
+        <section className='productContainer'>
+          {
+            this.state.products.map((product, i) => {
+              
+              if(product.category == "Proteinpulver") {
+                return <ProductCard key={product.name} product={product} />
+              }        
+            }) 
+          }
+        </section>
+
+        <hr className='hr' />
+
+        <section className='productContainer'>
+          {
+            this.state.products.map((product, i) => {
+              
+              if(product.category == "Aminosyror") {
+                return <ProductCard key={product.name} product={product} />
+              }        
+            }) 
+          }
+        </section>
+
+        <hr className='hr' />
+
+        <section className='productContainer'>
+          {
+            this.state.products.map((product, i) => {
+              
+              if(product.category == "PWO") {
+                return <ProductCard key={product.name} product={product} />
+              }        
+            }) 
+          }
+        </section>
+
+        <hr className='hr' />
+
+        <section className='productContainer'>
+          {
+            this.state.products.map((product, i) => {
+              
+              if(product.category == "Kläder") {
+                return <ProductCard key={product.name} product={product} />
+              }        
+            }) 
+          }
+        </section>
+
+        <hr className='hr' />
+        
+
+        {/* {
           this.state.products.map((product, i) => {
             return <ProductCard key={product.name} product={product} />
           }) 
-        }
+        } */}
 
 
           

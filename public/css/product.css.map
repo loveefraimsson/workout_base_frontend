@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAEI,QAFI,CAEJ,aAAa,AAAC,CACV,KAAK,CAAE,IAAI,CACd,AAJL,AAMI,QANI,CAMJ,WAAW,AAAC,CACR,OAAO,CAAE,IAAI,CAahB,AApBL,AASQ,QATA,CAMJ,WAAW,CAGP,OAAO,AAAC,CACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CAKtB,AAjBT,AAcY,QAdJ,CAMJ,WAAW,CAGP,OAAO,CAKH,SAAS,AAAC,CACN,KAAK,CAAE,IAAI,CACd",
+    "sources": [
+        "../../src/styles/product.scss",
+        "../../src/styles/_global.scss"
+    ],
+    "names": [],
+    "file": "product.css"
+}

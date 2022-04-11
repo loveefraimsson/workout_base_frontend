@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header';
 import cart from './images/cart.png'
 
+import '../styles/product.scss';
+
 export class Product extends Component {
 
     state = {
@@ -13,18 +15,18 @@ export class Product extends Component {
         const {name, category, image, price} = this.state.product;
 
         return (
-            <section>
+            <section className='product'>
                 <Header />
                 <h2>{name}</h2>
                 <p>{category}</p>
 
-                <img src={require(`./images/webshop/` + image + '.webp')}></img> <br />
+                <img className='productImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
 
                 <section className='buySection'>
                     <p>{price}</p>
-                    <button>
+                    <button className='buyBtn'>
                         <p>Köp</p>
-                        <img src={cart} alt="Shoppingcart" width="20px" />
+                        <img className='cartIcon' src={cart} alt="Shoppingcart" />
                     </button>
                 </section>
 

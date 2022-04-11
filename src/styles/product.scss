@@ -1,0 +1,24 @@
+@import "./global.scss";
+
+.product {
+
+    .productImage {
+        width: 50px;
+    }
+
+    .buySection {
+        display: flex;
+
+        .buyBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .cartIcon {
+                width: 20px;
+            }
+        }
+
+        
+    }
+}
