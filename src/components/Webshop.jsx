@@ -35,6 +35,7 @@ export class Webshop extends Component {
         <h2>Webshop</h2>
 
         <section className='productContainer'>
+          <h3>Proteinpulver</h3>
           {
             this.state.products.map((product, i) => {
               
@@ -48,6 +49,7 @@ export class Webshop extends Component {
         <hr className='hr' />
 
         <section className='productContainer'>
+        <h3>Aminosyror</h3>
           {
             this.state.products.map((product, i) => {
               
@@ -61,6 +63,7 @@ export class Webshop extends Component {
         <hr className='hr' />
 
         <section className='productContainer'>
+        <h3>PWO</h3>
           {
             this.state.products.map((product, i) => {
               
@@ -74,6 +77,7 @@ export class Webshop extends Component {
         <hr className='hr' />
 
         <section className='productContainer'>
+        <h3>Kläder</h3>
           {
             this.state.products.map((product, i) => {
               
@@ -85,17 +89,8 @@ export class Webshop extends Component {
         </section>
 
         <hr className='hr' />
-        
-
-        {/* {
-          this.state.products.map((product, i) => {
-            return <ProductCard key={product.name} product={product} />
-          }) 
-        } */}
-
-
-          
-        </section>
+                  
+      </section>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import cart from './images/cart.png'
+import cart from './images/cart.png';
 
 import '../styles/product.scss';
 

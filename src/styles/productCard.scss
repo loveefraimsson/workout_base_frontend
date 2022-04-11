@@ -1,5 +1,33 @@
 @import "./global.scss";
 
-.productCardLink {
-    text-decoration: none;
+.productCard {
+    border: 1px solid black;
+    padding: 2rem;
+    width: fit-content;
+    margin: 30px 0px;
+
+    .productCardImage {
+        width: 7rem;
+    }
+
+    .productCardLink {
+        text-decoration: none;
+    }
+
+    .buySection {
+        display: flex;
+
+        .buyBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .cartIcon {
+                width: 20px;
+            }
+        }
+
+        
+    }
 }
+

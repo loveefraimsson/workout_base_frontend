@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import cart from './images/cart.png';
 import '../styles/productCard.scss';
 
 export class ProductCard extends Component {
@@ -10,9 +11,22 @@ export class ProductCard extends Component {
     }
 
     render() {
+
+        const {name, category, image, price} = this.state.product;
+
         return (
             <section className='productCard'>
-                <Link className='productCardLink' key={this.state.product.name} to={{pathname:`/webshop/` + this.state.product.name , state: {product: this.state.product}}} >{this.state.product.name}</Link>
+                <img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
+                <Link className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}} >{name}</Link>
+            
+                <section className='buySection'>
+                    <p>{price}</p>
+                    <button className='buyBtn'>
+                        <p>Köp</p>
+                        <img className='cartIcon' src={cart} alt="Shoppingcart" />
+                    </button>
+                </section>
+            
             </section>
         )
     }
