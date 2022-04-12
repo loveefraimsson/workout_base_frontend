@@ -12,29 +12,28 @@ export class Product extends Component {
         product: this.props.location.state.product,
         numberInCart: '',
         from: this.props.location.state.from,
-        
+        changeInCart: false
     }
 
     componentDidMount = () => {
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
         this.setState({ numberInCart: productsInCart.length })
-    }
-
+    }    
+ 
     addInCart = (product) => {
         addToCart(product);
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
-        this.setState({ numberInCart: productsInCart.length })
+        this.setState({ numberInCart: productsInCart.length})
     }
-
-    
 
     render() {
 
-        const {name, category, image, price} = this.state.product;
+        const {name, category, image, price, description1, description2, description3} = this.state.product;
 
         return (
             <section className='product'>
                 <Header />
+
                 <div className='cartSection'>
 
                     {/* <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span> */}
@@ -47,6 +46,10 @@ export class Product extends Component {
                 <p>{category}</p>
 
                 <img className='productImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
+
+                <p>{description1}</p>
+                <p>{description2}</p>
+                <p>{description3}</p>
 
                 <section className='buySection'>
                     <p>{price}</p>
