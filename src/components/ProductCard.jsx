@@ -16,7 +16,7 @@ export class ProductCard extends Component {
         addToCart(product);
 
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
-        console.log("products.length", productsInCart.length);
+        //console.log("products.length", productsInCart.length);
         this.props.updateCartNumber(productsInCart);
         //this.setState({ numberInCart: })
         

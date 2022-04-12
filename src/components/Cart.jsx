@@ -27,7 +27,25 @@ export class Cart extends Component {
         else if (this.state.from === "webshop") {
           return "/webshop";
         }
-      }
+    }
+
+    removeFromCart = (product) => {
+        //console.log("product", product);
+
+        let productsInLocalStorage = JSON.parse(localStorage.getItem("cart"));
+
+        let findProduct = productsInLocalStorage.find((productsInLocalStorage) => productsInLocalStorage.id == product.id);
+        console.log("findProduct", findProduct);
+
+        //console.log(productsInLocalStorage.name.indexOf(findProduct.name)); 
+
+        let newCartArray = productsInLocalStorage.filter(product => product.id != findProduct.id)
+        console.log("newCartArray", newCartArray);
+
+        localStorage.setItem("cart",  JSON.stringify(newCartArray))
+        this.setState({ products: newCartArray })
+
+    }
 
     render() {
 
@@ -54,7 +72,7 @@ export class Cart extends Component {
                             
                             
                             <td key={product.price}>{product.price}</td>
-                            <td><button>Ta bort</button></td>
+                            <td><button onClick={() => this.removeFromCart(product)}>Ta bort</button></td>
                         </tr>
                         )
                         })
