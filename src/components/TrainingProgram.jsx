@@ -59,54 +59,54 @@ export class TrainingProgram extends Component {
 
 
       return (
-        <section className='trainingProgramContainer'>
+        <>
           <Header />
+          <section className='trainingProgramContainer'>
+            
 
-          <Link className='backButton' to="/profilepage">Tillbaka</Link>
+            <Link className='backButton' to="/profilepage">Tillbaka</Link>
 
-          <h2>Här ser du ditt träningsprogram som du har skapat!</h2>
+            <h2 className='title'>Här ser du ditt träningsprogram som du har skapat!</h2>
 
-          <table className='trainingProgram'>
+            <table className='trainingProgram'>
 
-            <thead>
-              <tr>
-                <th>Övning</th>
-                <th>Kategori</th>
-                <th>Sets</th>
-                <th>Reps</th> 
-                <th>Kommentarer</th>               
-                <th>Ta bort från träningsprogram</th>
-              </tr>
-              
-            </thead>
+              <thead>
+                <tr>
+                  <th>Övning</th>
+                  <th>Sets</th>
+                  <th>Reps</th> 
+                  <th>Kommentarer</th>               
+                  <th>Ta bort</th>
+                </tr>
+                
+              </thead>
 
-            <tbody>
-              {
-                this.state.trainingProgram.map((exercise, i) => {
-                  return (<tr key={i} >
+              <tbody>
+                {
+                  this.state.trainingProgram.map((exercise, i) => {
+                    return (<tr key={i} >
 
-                    <td className='exerciseTitle' key={exercise.title}>{exercise.title}</td>
-                    
-                    
-                    <td key={exercise.category}>{exercise.category}</td>
+                      <td className='exerciseTitle' key={exercise.title}>{exercise.title}</td>
+                      
 
-                    <td key={exercise.sets}>{exercise.sets}</td>
+                      <td key={exercise.sets}>{exercise.sets}</td>
 
-                    <td key={exercise.reps}>{exercise.reps}</td>
-                    <td key={exercise.comments}>{exercise.comments}</td>
+                      <td key={exercise.reps}>{exercise.reps}</td>
+                      <td key={exercise.comments}>{exercise.comments}</td>
 
-                    <td><button onClick={() => this.removeFromProgram(exercise)}>Ta bort</button></td>
-                  </tr>
-                  )
-                })
-              }
-            </tbody>
+                      <td><button onClick={() => this.removeFromProgram(exercise)}>Ta bort</button></td>
+                    </tr>
+                    )
+                  })
+                }
+              </tbody>
 
-          </table>
-
+            </table>
 
 
-        </section>
+
+          </section>
+        </>
       )
     }
 }

@@ -77,42 +77,44 @@ export class FavoriteExercises extends Component {
     if(!this.state.loadedData) return <></>
 
     return (
-      <section className='favoriteExercisesContainer'>
+      <>
         <Header />
 
-        <Link className='backButton' to="/profilepage">Tillbaka</Link>
+        <section className='favoriteExercisesContainer'>
+          <Link className='backButton' to="/profilepage">Tillbaka</Link>
 
-        <h1>Här är dina favoritmarkerade övningar:</h1>
-        <table className='favoriteExercises'>
+          <h1 className='title'>Här är dina favoritmarkerade övningar:</h1>
+          <table className='favoriteExercises'>
 
-            <thead>
-              <tr>
-                <th>Övning</th>
-                <th>Kategori</th>
-                <th>Avmarkera från favoritlista</th>
-              </tr>
-              
-            </thead>
-
-          <tbody>
-          {
-            this.state.favoriteExercises.map((exercise, i) => {
-              return (<tr key={i} >
-
-                <td className='exerciseTitle' key={exercise.title}><Link to={{pathname:`/workoutbank/` + exercise.category + "/" + exercise.title, state: {exercise: exercise, category: exercise.category, favoriteMarked: true, exerciseArray: this.state.exerciseArray, from: "favorite"}}} >{exercise.title}</Link></td>
+              <thead>
+                <tr>
+                  <th>Övning</th>
+                  <th>Kategori</th>
+                  <th>Ta bort</th>
+                </tr>
                 
-                
-                <td key={exercise.category}>{exercise.category}</td>
-                <td><button onClick={() => this.removeFavorite(exercise)}>Ta bort</button></td>
-              </tr>
-              )
-            })
-          }
-          </tbody>
+              </thead>
 
-        </table>
+            <tbody>
+            {
+              this.state.favoriteExercises.map((exercise, i) => {
+                return (<tr key={i} >
 
-      </section>
+                  <td key={exercise.title}><Link className='exerciseTitle' to={{pathname:`/workoutbank/` + exercise.category + "/" + exercise.title, state: {exercise: exercise, category: exercise.category, favoriteMarked: true, exerciseArray: this.state.exerciseArray, from: "favorite"}}} >{exercise.title}</Link></td>
+                  
+                  
+                  <td key={exercise.category}>{exercise.category}</td>
+                  <td><button onClick={() => this.removeFavorite(exercise)}>Ta bort</button></td>
+                </tr>
+                )
+              })
+            }
+            </tbody>
+
+          </table>
+
+        </section>
+      </>
     )
   }
 }
