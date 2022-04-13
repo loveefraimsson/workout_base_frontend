@@ -31,17 +31,21 @@ class ExerciseCard extends Component {
     return (
       <>
         <Header />
-        <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
-        <section className='exerciseContainer'>
-          {specificExercises.map((exercise) => {
-            return (
-              <section key={exercise.title} className='card'>
-                <Link className='cardLink' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category, exerciseArray: this.state.exerciseArray, from: "exercisecard"}}} >{exercise.title}</Link>
-              </section>)
-          })
+        <section className='exerciseCardContainer'>
+          <Link className='backButton' to={"/workoutbank"} >Tillbaka till övningsbanken</Link>
+          <section className='exerciseContainerContent'>
+            {specificExercises.map((exercise) => {
+              return (
 
-          }
+                  <Link className='card' key={exercise.title} to={{pathname:`/workoutbank/` + this.state.category + "/" + exercise.title, state: {exercise: exercise, category: this.state.category, exerciseArray: this.state.exerciseArray, from: "exercisecard"}}} >{exercise.title}</Link>
+
+              )
+            })
+
+            }
+          </section>
         </section>
+        
       </>
     )
   }

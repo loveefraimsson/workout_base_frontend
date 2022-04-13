@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAEI,qBAFiB,CAEjB,mBAAmB,AAAC,CAChB,KAAK,CAAE,IAAI,CACd",
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,qBAAqB,AAAC,CAElB,MAAM,CAAE,mBAAmB,CAC3B,OAAO,CAAE,WAAW,CAkBvB,AArBD,AAOI,qBAPiB,CAOjB,EAAE,AAAC,CACC,WAAW,CCQL,MAAM,CAAE,UAAU,CDPxB,SAAS,CAAE,MAAM,CACpB,AAVL,AAYI,qBAZiB,CAYjB,WAAW,AAAC,CACR,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,eAAe,CAAE,YAAY,CAC7B,cAAc,CAAE,MAAM,CACtB,KAAK,CAAE,WAAW,CAClB,MAAM,CAAE,QAAQ,CACnB",
     "sources": [
-        "../../src/styles/workoutbank.scss"
+        "../../src/styles/workoutbank.scss",
+        "../../src/styles/_global.scss"
     ],
     "names": [],
     "file": "workoutbank.css"

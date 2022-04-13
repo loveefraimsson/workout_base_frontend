@@ -9,13 +9,15 @@ function Categories(props) {
 
     const [category, setCategory] = useState(props.category);
     const [exerciseArray, setExerciseArray] = useState(props.exerciseArray);
+
+    function scroll() {
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }
     
 
   return (
       <>
-        <section className='categoryBox'>
-          <Link className='categoryLink' key={category} to={{pathname:`/workoutbank/` + props.category, state: {exerciseArray: exerciseArray, category: category}}} >{category}</Link>
-        </section>
+          <Link onClick={scroll}  className='categoryBox' key={category} to={{pathname:`/workoutbank/` + props.category, state: {exerciseArray: exerciseArray, category: category}}} >{category}</Link>
       </>
   )
 }

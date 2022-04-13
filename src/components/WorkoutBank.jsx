@@ -49,20 +49,26 @@ export class WorkoutBank extends Component {
 
 
         return (
-            <section className='workoutbankContainer'>
+            <>
                 <Header />
-                <h1>Övningsbank</h1>
+                <section className='workoutbankContainer'>
+                    
+                    <h1>Övningsbank</h1>
 
-                {/* Prints all categories */}
-                {
-                    allCategories.map((category) => {
-                        return(                          
-                            <Categories key={category} category={category} exerciseArray={this.state.exerciseArray} />
-                        )
-                    })
-                }
+                    <section className='categories'>
 
-            </section>
+                        {/* Prints all categories */}
+                        {
+                            allCategories.map((category) => {
+                                return(                          
+                                    <Categories key={category} category={category} exerciseArray={this.state.exerciseArray} />
+                                )
+                            })
+                        }
+                    </section>
+
+                </section>
+            </>
         )
     }
 }

@@ -3,14 +3,17 @@
 .categoryBox {
     border: 1px solid black;
     border-radius: 7px;
-    padding: 2rem 1rem;
-    width: 10rem;
+    padding: 1rem 2rem;
+    width: 6.25rem;
     text-align: center;
-    margin-bottom: 40px;
-    margin-left: 30px;
+    margin-bottom: 2rem;
     background-color: $beige;
     cursor: pointer;
     box-shadow: 5px 8px 10px #999;
+    text-decoration: none;
+    color: $textColor;
+    font-size: 2rem;
+    font-family: $textFont;
 
     &:hover {
         background-color: $hoverButton;
@@ -19,9 +22,4 @@
         background-color: $activeButton;
     }
 
-    .categoryLink {
-        text-decoration: none;
-        color: $textColor;
-        font-size: 2rem;
-    }
 }

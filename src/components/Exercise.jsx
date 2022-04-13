@@ -206,10 +206,10 @@ export class Exercise extends Component {
        
       <Header />
         {/* <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link> */} 
-
+      <section className='exerciseContainer'>
         <Link className='backButton' to={{pathname: this.backLink(), state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
         
-        <h1>{this.state.exercise.title}</h1>
+        <h2 className='title'>{this.state.exercise.title}</h2>
         
         <form className='trainingProgramForm' onSubmit={this.saveInProgram}>
           <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
@@ -226,13 +226,15 @@ export class Exercise extends Component {
 
         }
 
+        <h3>Beskrivning</h3>
+        <p className='exerciseDescription'>{this.state.exercise.description1}</p>
+        <p className='exerciseDescription'>{this.state.exercise.description2}</p>
 
-        <p>{this.state.exercise.description1}</p>
-        <p>{this.state.exercise.description2}</p>
-
-        <img src={require(`./images/exercises/` + this.state.exercise.image + '.webp')}></img> <br />
+        <img className='exerciseImage' src={require(`./images/exercises/` + this.state.exercise.image + '.webp')}></img>
 
         {parse(this.state.exercise.video)}
+      </section>
+        
       </>
     )
   }

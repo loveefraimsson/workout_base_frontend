@@ -35,9 +35,11 @@ export class Header extends Component {
         setTimeout(() => {
           this.setState({showMenu: false })
         }, 300)
-
-        //this.setState({showMenu: false });
     }
+  }
+
+  closeMenu = () => {
+    this.setState({showMenu: false });
   }
 
   logout = () => {
