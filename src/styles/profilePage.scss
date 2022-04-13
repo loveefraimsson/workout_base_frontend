@@ -2,13 +2,23 @@
 
 
 .profilePage {
+    margin: 2rem 0rem 5rem 0rem;
+    padding: 0rem 1.5rem;
+
     .welcomeTitleProfile {
         font-family: $headingFont;
-        font-size: 3rem;
+        font-size:  2.5rem;
         margin: 2rem 0rem 1rem 0rem;
     }
 
     p {
         font-family: $textFont;
+    }
+
+    .trainingProgramLink, .favoriteExerciseLink {
+        font-family: $textFont;
+        color: $textColor;
+        display: block;
+        margin-bottom: 1rem;
     }
 }
