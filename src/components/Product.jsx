@@ -12,7 +12,7 @@ export class Product extends Component {
         product: this.props.location.state.product,
         numberInCart: '',
         from: this.props.location.state.from,
-        changeInCart: false
+        changeInCart: "",
     }
 
     componentDidMount = () => {
@@ -23,8 +23,16 @@ export class Product extends Component {
     addInCart = (product) => {
         addToCart(product);
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
-        this.setState({ numberInCart: productsInCart.length})
+        this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber" })
+        this.animateCartNumber();
     }
+
+    animateCartNumber = () => {
+        setTimeout(() => {
+            this.setState({changeInCart: "" })
+        }, 3000)
+    }
+
 
     render() {
 
@@ -37,7 +45,7 @@ export class Product extends Component {
                 <div className='cartSection'>
 
                     {/* <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span> */}
-                    <Link className='productCardLink' to={{pathname: "/cart" , state: {from: "product", currentProduct: this.state.product}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span>
+                    <Link className='productCardLink' to={{pathname: "/cart" , state: {from: "product", currentProduct: this.state.product}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span className={this.state.changeInCart}>{this.state.numberInCart}</span>
                 
                 </div>
 

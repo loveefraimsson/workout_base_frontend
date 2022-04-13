@@ -1,10 +1,10 @@
 {
     "version": 3,
-    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAEI,iBAFa,CAEb,iBAAiB,AAAA,CACb,MAAM,CAAE,SAAS,CACpB,AAJL,AAOI,iBAPa,CAOb,EAAE,AAAA,GAAG,AAAC,CACH,UAAU,CAAE,eAAe,CAC3B,KAAK,CAAE,GAAG,CACZ",
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAIQ,iBAJS,CAEb,YAAY,CAER,IAAI,AAAC,CACD,gBAAgB,CAAE,GAAG,CACxB,AANT,AAQQ,iBARS,CAEb,YAAY,CAMR,kBAAkB,AAAC,CACf,cAAc,CAAE,iBAAiB,CACjC,kBAAkB,CAAE,EAAE,CAEzB,AAED,UAAU,CAAV,iBAAU,CACN,IAAI,CAAE,gBAAgB,CAAE,GAAG,CAC3B,EAAE,CAAE,gBAAgB,CAAE,MAAM,EAhBxC,AAoBI,iBApBa,CAoBb,iBAAiB,AAAA,CACb,MAAM,CAAE,SAAS,CACpB,AAtBL,AAyBI,iBAzBa,CAyBb,EAAE,AAAA,GAAG,AAAC,CACH,UAAU,CAAE,eAAe,CAC3B,KAAK,CAAE,GAAG,CACZ",
     "sources": [
-        "../../src/styles/Webshop.scss",
+        "../../src/styles/webshop.scss",
         "../../src/styles/_global.scss"
     ],
     "names": [],
-    "file": "Webshop.css"
+    "file": "webshop.css"
 }

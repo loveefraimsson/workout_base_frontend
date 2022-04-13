@@ -15,7 +15,8 @@ export class Webshop extends Component {
     loadedData: false,
     products: [],
     url: this.props.url,
-    numberInCart: ''
+    numberInCart: '',
+    changeInCart: "",
   }
 
   componentDidMount = () => {
@@ -34,7 +35,14 @@ export class Webshop extends Component {
 
   updateCartNumber = (productsInCart) => {
     console.log("callback", productsInCart);
-    this.setState({ numberInCart: productsInCart.length })
+    this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber" })
+    this.animateCartNumber();
+  }
+
+  animateCartNumber = () => {
+    setTimeout(() => {
+        this.setState({changeInCart: "" })
+    }, 3000)
   }
 
 
@@ -50,7 +58,7 @@ export class Webshop extends Component {
 
         <div className='cartSection'>
 
-            <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span>
+            <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span className={this.state.changeInCart}>{this.state.numberInCart}</span>
             
         </div>
 

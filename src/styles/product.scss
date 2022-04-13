@@ -2,6 +2,21 @@
 
 .product {
 
+    span {
+        background-color: red;
+    }
+
+    .animateCartNumber {
+        animation-name: animateCartNumber;
+        animation-duration: 1s;
+        
+    }
+
+    @keyframes animateCartNumber {            
+        from {background-color: red;}
+        to {background-color: yellow;}
+    }
+
     .productImage {
         width: 50px;
     }

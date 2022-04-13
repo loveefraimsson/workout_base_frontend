@@ -2,6 +2,24 @@
 
 .webshopContainer {
 
+    .cartSection {
+
+        span {
+            background-color: red;
+        }
+    
+        .animateCartNumber {
+            animation-name: animateCartNumber;
+            animation-duration: 1s;
+            
+        }
+    
+        @keyframes animateCartNumber {            
+            from {background-color: red;}
+            to {background-color: yellow;}
+        }
+    }
+
     .productContainer{
         margin: 2rem 0rem;
     }
