@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
+import heroImgWorkoutbank from "./images/heroImgWorkoutbankNew.jpg";
 import ProductCard from './ProductCard';
 
 import { Link } from 'react-router-dom';
@@ -50,75 +50,79 @@ export class Webshop extends Component {
     if(!this.state.loadedData) return <></>
 
     return (
-      <section className='webshopContainer'>
+      <>
         <Header />
-        {/* <img  src={heroImgWorkoutbank} alt="Hero-image of a man who works out" width="100%" /> */}
+        <img className='heroWebshop' src={heroImgWorkoutbank} alt="Hero-image of a man who works out" />
+        <section className='webshopContainer'>
+ 
+          <h2>Webshop</h2>
 
-        <h2>Webshop</h2>
+          <div className='cartSection'>
+              <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}>
 
-        <div className='cartSection'>
+                  <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
+                  <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>
 
-            <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span className={this.state.changeInCart}>{this.state.numberInCart}</span>
-            
-        </div>
+              </Link>
+                        
+          </div>
 
-        <section className='productContainer'>
-          <h3>Proteinpulver</h3>
-          {
-            this.state.products.map((product, i) => {
-              
-              if(product.category == "Proteinpulver") {
-                return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-              }        
-            }) 
-          }
+          <section className='productContainer'>
+            <h3>Proteinpulver</h3>
+            {
+              this.state.products.map((product, i) => {
+                
+                if(product.category == "Proteinpulver") {
+                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                }        
+              }) 
+            }
+          </section>
+
+          <hr className='hr' />
+
+          <section className='productContainer'>
+          <h3>Aminosyror</h3>
+            {
+              this.state.products.map((product, i) => {
+                
+                if(product.category == "Aminosyror") {
+                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                }        
+              }) 
+            }
+          </section>
+
+          <hr className='hr' />
+
+          <section className='productContainer'>
+          <h3>PWO</h3>
+            {
+              this.state.products.map((product, i) => {
+                
+                if(product.category == "PWO") {
+                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                }        
+              }) 
+            }
+          </section>
+
+          <hr className='hr' />
+
+          <section className='productContainer'>
+          <h3>Kläder</h3>
+            {
+              this.state.products.map((product, i) => {
+                
+                if(product.category == "Kläder") {
+                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                }        
+              }) 
+            }
+          </section>
+                    
         </section>
-
-        <hr className='hr' />
-
-        <section className='productContainer'>
-        <h3>Aminosyror</h3>
-          {
-            this.state.products.map((product, i) => {
-              
-              if(product.category == "Aminosyror") {
-                return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-              }        
-            }) 
-          }
-        </section>
-
-        <hr className='hr' />
-
-        <section className='productContainer'>
-        <h3>PWO</h3>
-          {
-            this.state.products.map((product, i) => {
-              
-              if(product.category == "PWO") {
-                return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-              }        
-            }) 
-          }
-        </section>
-
-        <hr className='hr' />
-
-        <section className='productContainer'>
-        <h3>Kläder</h3>
-          {
-            this.state.products.map((product, i) => {
-              
-              if(product.category == "Kläder") {
-                return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-              }        
-            }) 
-          }
-        </section>
-
-        <hr className='hr' />
-                  
-      </section>
+      </>
     )
   }
 }

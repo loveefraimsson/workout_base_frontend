@@ -3,7 +3,6 @@ import Header from './Header';
 import ExerciseCard from './ExerciseCard';
 import { Link } from 'react-router-dom';
 import Categories from './Categories';
-import heroImgWorkoutbank from "./images/heroImgWorkoutbank.png";
 import Loader from './Loader';
 
 import '../styles/workoutbank.scss';

@@ -1,32 +1,70 @@
 @import "./global.scss";
 
+.heroWebshop {
+    width: 100%;
+}
+
 .webshopContainer {
+    position: relative;
+    margin: 2rem 0rem 5rem 0rem;
+    padding: 0rem 1.5rem;
+    
+
+    h2 {
+        font-family: $headingFont;
+        font-size: 1.5rem;
+    }
 
     .cartSection {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 1rem;
+        right: 1rem;
+        float: right;
+        z-index: 1000;
+        cursor: pointer;
+        background-color: $beige;
+        padding: 0.25rem;
+        border-radius: 5px;
 
-        span {
-            background-color: red;
+        #numberInCart {
+            color: $textColor;
+            display: inline-block;
+            margin-left: 2px;
+            width: 1rem;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.75rem;
         }
     
         .animateCartNumber {
-            animation-name: animateCartNumber;
+            animation-name: animateNumber;
             animation-duration: 1s;
             
         }
-    
-        @keyframes animateCartNumber {            
-            from {background-color: red;}
-            to {background-color: yellow;}
-        }
+        
+        @keyframes animateNumber {
+            from {background-color: $beige;}
+            to {background-color: $activeButton;}
+          }
+        
     }
 
     .productContainer{
-        margin: 0rem 0rem;
+
+
+        h3 {
+            font-size: 1rem;
+            font-family: $headingFont;
+            margin: 1.5rem 0rem 2rem 0rem;
+        }
     }
     
 
     hr.hr {
-       border-top: 1px solid black;
+       border-top: 1px solid grey;
        width: 90%;
     }
 }

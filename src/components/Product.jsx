@@ -39,25 +39,30 @@ export class Product extends Component {
         const {name, category, image, price, description1, description2, description3} = this.state.product;
 
         return (
-            <section className='product'>
-                <Header />
+            <>
+            <Header />
+            <section className='productContainer'>
+                
 
                 <div className='cartSection'>
+                    <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}>
 
-                    {/* <Link to={"/cart"}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span>{this.state.numberInCart}</span> */}
-                    <Link className='productCardLink' to={{pathname: "/cart" , state: {from: "product", currentProduct: this.state.product}}}><img className='cartIcon' src={cart} alt="Cart-icon" width="20px" />Gå till kundvagnen</Link><span className={this.state.changeInCart}>{this.state.numberInCart}</span>
-                
+                        <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
+                        <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>
+
+                    </Link>
+                        
                 </div>
 
                 <Link className='backButton' to={"/webshop"} >Tillbaka till webshopen</Link>
                 <h2>{name}</h2>
-                <p>{category}</p>
+                <p className='productCategory'>{category}</p>
 
                 <img className='productImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
 
-                <p>{description1}</p>
-                <p>{description2}</p>
-                <p>{description3}</p>
+                <p className='productDescription'>{description1}</p>
+                <p className='productDescription'>{description2}</p>
+                <p className='productDescription'>{description3}</p>
 
                 <section className='buySection'>
                     <p>{price}</p>
@@ -68,6 +73,7 @@ export class Product extends Component {
                 </section>
 
             </section>
+            </>
 
         )
     }

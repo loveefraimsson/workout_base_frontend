@@ -28,9 +28,9 @@ export class ProductCard extends Component {
 
         return (
             <section className='productCard'>
-                <img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />
+                
 
-                <Link className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}} >{name}</Link>
+                <Link className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}}><img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />{name}</Link>
                 
             
                 <section className='buySection'>

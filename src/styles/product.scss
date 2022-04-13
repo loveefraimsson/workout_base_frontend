@@ -1,36 +1,106 @@
 @import "./global.scss";
 
-.product {
+.productContainer {
+    margin: 2rem 0rem 5rem 0rem;
+    padding: 0rem 1.5rem;
+    font-family: $textFont;
 
-    span {
-        background-color: red;
-    }
+    .cartSection {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 1rem;
+        right: 1rem;
+        float: right;
+        z-index: 1000;
+        cursor: pointer;
+        background-color: $beige;
+        padding: 0.25rem;
+        border-radius: 5px;
 
-    .animateCartNumber {
-        animation-name: animateCartNumber;
-        animation-duration: 1s;
+        #numberInCart {
+            color: $textColor;
+            display: inline-block;
+            margin-left: 2px;
+            width: 1rem;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 4px;
+            font-size: 0.75rem;
+        }
+    
+        .animateCartNumber {
+            animation-name: animateNumber;
+            animation-duration: 1s;
+            
+        }
+        
+        @keyframes animateNumber {
+            from {background-color: $beige;}
+            to {background-color: $activeButton;}
+        }
         
     }
 
-    @keyframes animateCartNumber {            
-        from {background-color: red;}
-        to {background-color: yellow;}
+    .backButton {
+        background-color: $beige;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-family: $textFont;
+        text-decoration: none;
+        color: $textColor;
+        cursor: pointer;
+    }
+
+    h2 {
+        font-family: $headingFont;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .productCategory {
+        margin: 0rem;
+        font-style: italic;
     }
 
     .productImage {
-        width: 50px;
+        width: 20rem;
+        display: block;
+        margin: 0px auto;
+    }
+
+    .productDescription {
+        font-size: 1rem;
     }
 
     .buySection {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+            font-weight: bold;
+        }
 
         .buyBtn {
+            font-family: $textFont;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 1.5rem;
+            padding: 1rem;
+            background-color: $beige;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            margin-left: 1rem;
 
             .cartIcon {
-                width: 20px;
+                width: 1.25rem;
+                margin-left: 3px;
             }
         }
 
