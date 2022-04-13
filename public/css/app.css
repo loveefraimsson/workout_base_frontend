@@ -1,2 +1,2 @@
-@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap");.App{position:relative;min-height:100vh;padding-bottom:7rem}
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap");.App{position:relative;min-height:calc(100vh - 5rem);padding-bottom:5rem}
 /*# sourceMappingURL=App.css.map */

@@ -17,22 +17,29 @@ export class Startpage extends Component {
     //If user is logged in:
     if(isLoggedIn === 'true') {
       return (
-        <section>
+        <section className='startPageContainer'>
           <Header />
-          <h2 className='welcomeTitle'>Hej {localStorage.getItem("userName")}!</h2>
-          <p>Snabbåtkomst:</p>
-          <Link to="trainingprogram">Ditt träningsprogram</Link><br />
-          <Link to="favoriteexercises">Dina favoritövningar</Link>
+          <section className='startPageContent'>
+            <h2 className='welcomeTitle'>Hej {localStorage.getItem("userName")}!</h2>
+              <p>Snabbåtkomst:</p>
+              <Link className='quickAccessLink' to="trainingprogram">Ditt träningsprogram</Link>
+              <Link className='quickAccessLink' to="favoriteexercises">Dina favoritövningar</Link>
+          </section>
+          
+          
         </section>
       )
     }
     else {  
       return (
         //If user is logged out:
-        <section>
+        <section className='startPageContainer'>
           <Header />
-          <h1 className='welcomeTitle'>Välkommen, vänligen logga in!</h1>
+          <section className='startPageContent'>
+            <h1 className='welcomeTitle'>Välkommen, vänligen logga in!</h1>
           <Login />
+          </section>
+          
           
         </section>
       )

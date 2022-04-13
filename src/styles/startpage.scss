@@ -1,7 +1,26 @@
 @import "./global.scss";
 
-.welcomeTitle {
-    font-family: $headingFont;
-    font-size: 3rem;
-    margin: 2rem 0rem 4rem 0rem;
+.startPageContent {
+    margin: 2rem 0rem 5rem 0rem;
+    padding: 0rem 1.5rem;
+    font-family: $textFont;
+
+    p {
+        //text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .quickAccessLink {
+        color: $textColor;
+        display: block;
+        //text-decoration: none;
+        margin-bottom: 1rem;
+    }
+
+    .welcomeTitle {
+        font-family: $headingFont;
+        font-size: 2.5rem;
+        margin: 0rem 0rem 4rem 0rem;
+    }
 }
+

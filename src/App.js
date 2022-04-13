@@ -50,7 +50,7 @@ class App extends Component {
       <>
       <section className="App">
         
-        <section className='routing'>
+
           <Router>
             <Switch>
               <Route exact path="/" component={Startpage} />
@@ -104,7 +104,6 @@ class App extends Component {
 
           </Router>
 
-        </section>
 
         <Footer />
 

@@ -6,9 +6,9 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    height: 70px;
-    padding: 0px 1rem;
-    margin-bottom: 30px;
+    height: 5rem;
+    padding: 0px 1.5rem;
+    /* margin-bottom: 30px; */
  
     .logo {
         width: 150px;
@@ -19,34 +19,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .cartSection {
-            margin-right: 2rem;
-
-            .cartIcon {
-                width: 1.5rem;
-                
-            }
-
-            sup {
-                
-            }
-        }
         
 
         .toggleContainer {
         
-            img {
-                width: 20px;
+            .menuToggleIcon {
+                width: 1.5rem;
                 cursor: pointer;
+                z-index: 100000;
+                position: relative;
             }
 
             // UL
             .navbar-nav {
                 position: absolute;
                 width: 100vw;
-                min-height: 100vh;
-                top: 70px;
+                max-height: 100vh;
+                top: 100px;
                 right: 0;
                 background-color: rgba(255, 255, 255, 0.95);
                 display: flex;
@@ -54,8 +43,8 @@
                 align-items: center;
                 justify-content: flex-start;
                 font-family: $headingFont;
-                margin: 0px;
-                padding: 90px 0px 0px 0px;
+                margin: 0;
+                padding: 4rem 0rem 0rem 0rem;
                 z-index: 10000;
                 
     
@@ -63,7 +52,7 @@
                 .navItem {
                     list-style-type: none;
                     padding: 25px 0px;
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                 }
 
                 //LINK

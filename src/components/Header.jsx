@@ -56,8 +56,8 @@ export class Header extends Component {
           <section className='toggleContainer'>
 
             {this.state.showMenu ? (
-              <img src={crossIcon} onClick={this.handleMenu} alt="" />
-            ) : <img src={hamburgerIcon} onClick={this.handleMenu} alt="" />
+              <img className='menuToggleIcon' src={crossIcon} onClick={this.handleMenu} alt="" />
+            ) : <img className='menuToggleIcon' src={hamburgerIcon} onClick={this.handleMenu} alt="" />
 
             }
 

@@ -4,12 +4,13 @@
     border: 1px solid black;
     width: fit-content;
     margin: 0px auto;
-    padding: 4.5rem 6rem;
+    padding: 3rem 3rem;
     font-family: $textFont;
     background-color: $beige;
+    
 
     label {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     input {
@@ -18,6 +19,7 @@
         margin-bottom: 1rem;
         background-color: $greyWhite;
         border: 1px solid black;
+        border-radius: 5px;
 
         &:hover {
             background-color: $white;
@@ -31,8 +33,9 @@
     .loginBtn {
         background-color: $greyWhite;
         border: 1px solid black;
+        border-radius: 5px;
         padding: 0.5em 1em;
-        font-size: 1em;
+        font-size: 1rem;
         font-family: $textFont;
         margin-top: 1em;
 
