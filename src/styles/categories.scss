@@ -23,3 +23,22 @@
     }
 
 }
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .categoryBox {
+        padding: 2rem 3rem;
+        width: 9.375rem;
+        margin: 0rem 3rem 2rem 0rem;
+        font-size: 2.25rem;
+    
+        &:hover {
+            background-color: $hoverButton;
+        }
+        &:active {
+            background-color: $activeButton;
+        }
+    
+    }
+}

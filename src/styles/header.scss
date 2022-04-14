@@ -11,7 +11,7 @@
     /* margin-bottom: 30px; */
  
     .logo {
-        width: 150px;
+        width: 125px;
         height: auto;
     }
 
@@ -90,8 +90,14 @@
         }
 
     }
-
     
+}
 
-    
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
 }

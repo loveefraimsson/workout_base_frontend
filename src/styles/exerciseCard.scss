@@ -14,11 +14,18 @@
         text-decoration: none;
         color: $textColor;
         cursor: pointer;
+
+        &:hover {
+            background-color: $hoverButton;                   
+        }
+
+        &:active {
+            background-color: $activeButton;
+            color: $white;
+        }
     }
 
     .exerciseContainerContent {
-     
-    
         .card {
             display: block;
             border: 1px solid black;
@@ -45,5 +52,35 @@
 
         }
     }
+}
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .exerciseCardContainer {
+    
+        .backButton {
+            padding: 0.75rem 1.25rem;
+	        font-size: 1rem;
+        }
+    
+        .exerciseContainerContent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            flex-direction: row;
+            width: 80%;
+            margin: 2rem auto;
+        
+            .card {
+                padding: 2rem 3rem;
+                width: fit-content;
+                margin: 2rem 1rem 2rem 1rem;
+                font-size: 2.25rem;
+    
+            }
+        }
+    }
+
 }
 
