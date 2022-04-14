@@ -10,9 +10,10 @@ export class Product extends Component {
 
     state = {
         product: this.props.location.state.product,
-        numberInCart: '',
+        numberInCart: 0,
         from: this.props.location.state.from,
         changeInCart: "",
+        sum: 0,
     }
 
     componentDidMount = () => {
