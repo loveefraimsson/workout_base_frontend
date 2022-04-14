@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/login.scss';
+import '../styles/mediaQuerieTablet.scss';
+import "./style.css"
 
 import {
     BrowserRouter as Router,
@@ -71,10 +73,10 @@ class Login extends Component {
         return (
             <section>
                 <form className='loginForm' onSubmit={this.handleSubmit}>
-                    <label htmlFor="userName">Användarnamn:</label> <br />
+                    <label className='label' htmlFor="userName">Användarnamn:</label> <br />
                     <input className='inputUserName' name='userName' type="text" onChange={e => this.userName = e.target.value} /> <br />
-                    <label htmlFor="password">Lösenord:</label> <br />
-                    <input className='inputPassword' name='password' type="text" onChange={e => this.password = e.target.value} /> <br />
+                    <label className='label' htmlFor="password">Lösenord:</label> <br />
+                    <input  className='inputPassword' name='password' type="text" onChange={e => this.password = e.target.value} /> <br />
                     <button className='loginBtn' type='submit'>Logga in</button>
 
                     {this.printErrorMessage()}     

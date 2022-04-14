@@ -24,3 +24,23 @@
     }
 }
 
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .startPageContent{
+        
+        .welcomeTitle {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .quickAccessLink:hover {
+            text-decoration: underline;
+            color: $hoverLink;
+        }
+    }
+
+}
+
