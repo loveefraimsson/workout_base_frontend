@@ -63,8 +63,12 @@ export class TrainingProgram extends Component {
           <Header />
           <section className='trainingProgramContainer'>
             
+            <div className='buttonSection'>
+              <Link className='backButton' to="/profilepage">Tillbaka</Link> 
+              <Link className='buttonToWorkoutbank' to={"/workoutbank"} >Till övningsbanken</Link>
+            </div>
 
-            <Link className='backButton' to="/profilepage">Tillbaka</Link>
+            
 
             <h2 className='title'>Här ser du ditt träningsprogram som du har skapat!</h2>
 

@@ -3,9 +3,16 @@
 .trainingProgramContainer {
     margin: 2rem 0rem 5rem 0rem;
     padding: 0rem 1.5rem;
+
+    .buttonSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     
 
-    .backButton {
+    .backButton, .buttonToWorkoutbank {
+        width: fit-content;
         background-color: $beige;
         border: 1px solid black;
         border-radius: 5px;
@@ -15,8 +22,9 @@
         text-decoration: none;
         color: $textColor;
         cursor: pointer;
-        //margin: 0rem 1.5rem;
     }
+
+
     .title {
         font-family: $headingFont;
         font-size: 1.5rem;
