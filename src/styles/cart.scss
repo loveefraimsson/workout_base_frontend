@@ -1,16 +1,68 @@
 @import "./global.scss";
 
 .cartContainer {
-    table, thead, th, tr, td {
+    margin: 2rem 0rem 5rem 0rem;
+    padding: 0rem 1.5rem;
+
+    h2 {
+        font-family: $headingFont;
+        font-size: 1.5rem;
+    }
+
+    .backButton {
+        background-color: $beige;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        font-family: $textFont;
+        text-decoration: none;
+        color: $textColor;
+        cursor: pointer;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    table, thead, tr, td {
         border: 1px solid lightgray;
         border-collapse: collapse; 
+        font-family: $textFont;
     
-        td, th {
-            padding: 30px;
+        td {
+            padding: 7px 7px;
+            font-size: 0.75rem;
+        }
+
+        .nameAndImg {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .productImage {
-            width: 100px;
+            width: 50px;
+            height: auto;
         }
+
+        button {
+            background-color: $beige;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: fit-content;
+            padding: 5px;
+            font-size: 0.75rem;
+            font-family: $textFont;
+            text-decoration: none;
+            color: $textColor;
+            cursor: pointer;
+            margin: 0px 7px;
+        }
+    }
+
+    .sum {
+        font-family: $textFont;
+        font-size: 1rem;
+        font-weight: bold;
     }
 }

@@ -66,7 +66,7 @@ export class Product extends Component {
                 
 
                 <div className='cartSection'>
-                    <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}>
+                    <Link className='cartLink' to={{pathname: "/cart" , state: {from: "product", currentProduct: this.state.product}}}>
                         <div className='iconAndNumber'>
                             <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
                             <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>

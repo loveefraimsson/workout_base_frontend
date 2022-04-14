@@ -11,13 +11,24 @@ export class Cart extends Component {
         products: [],
         loadedData: false,
         from:  this.props.location.state.from,
-        fromCurrentProduct: this.props.location.state.currentProduct
+        fromCurrentProduct: this.props.location.state.currentProduct,
+        sumInCart: 0,
     }
 
     componentDidMount = () => {
         let products = JSON.parse(localStorage.getItem("cart"));
         console.log(products);
-        this.setState({ loadedData: true, products: products })
+
+        let sum = 0;
+
+        for(let i = 0; i < products.length; i++) {
+        sum = sum + products[i].price;
+        }
+        console.log("sum i cart", sum);
+
+        this.setState({ loadedData: true, products: products, sumInCart: sum })
+
+
     }
 
     backLink = () => {
@@ -43,7 +54,13 @@ export class Cart extends Component {
         console.log("newCartArray", newCartArray);
 
         localStorage.setItem("cart",  JSON.stringify(newCartArray))
-        this.setState({ products: newCartArray })
+
+        let currentSum = this.state.sumInCart;
+        let newSum = currentSum - product.price;
+
+        console.log("newSum", newSum);
+
+        this.setState({ products: newCartArray, sumInCart: newSum })
 
     }
 
@@ -52,37 +69,42 @@ export class Cart extends Component {
         if(!this.state.loadedData) return <></>
 
         return (
-            <section className='cartContainer'>
+            <>
                 <Header />
-                <h2>Kundvagn</h2>
+                <section className='cartContainer'>
+                    
+                    <h2>Kundvagn</h2>
 
-                
+                    
 
-                {/* <Link className='backButton' to={"/webshop"} >Tillbaka</Link> */}
-                <Link className='backButton' to={{pathname: this.backLink(), state: {product: this.state.fromCurrentProduct}}} >Tillbaka</Link>
+                    {/* <Link className='backButton' to={"/webshop"} >Tillbaka</Link> */}
+                    <Link className='backButton' to={{pathname: this.backLink(), state: {product: this.state.fromCurrentProduct}}} >Tillbaka</Link>
 
-                <table className=''>
+                    <table className=''>
 
-                    <tbody>
-                    {
-                        this.state.products.map((product, i) => {
-                        return (<tr key={i} >
+                        <tbody>
+                        {
+                            this.state.products.map((product, i) => {
+                            return (<tr key={i} >
 
-                            <td className='' key={product.name}>{product.name} <img className='productImage' src={require(`./images/webshop/` + product.image + '.webp')}></img> </td>
-                            
-                            
-                            <td key={product.price}>{product.price}</td>
-                            <td><button onClick={() => this.removeFromCart(product)}>Ta bort</button></td>
-                        </tr>
-                        )
-                        })
-                    }
-                    </tbody>
+                                <td className='nameAndImg' key={product.name}>{product.name} <img className='productImage' src={require(`./images/webshop/` + product.image + '.webp')}></img> </td>
+                                
+                                
+                                <td key={product.price}>{product.price}kr</td>
+                                <td><button onClick={() => this.removeFromCart(product)}>Ta bort</button></td>
+                            </tr>
+                            )
+                            })
+                        }
+                        </tbody>
 
-                </table>
+                    </table>
+
+                    <p className='sum'>Summa: {this.state.sumInCart}kr</p>
 
 
-            </section>
+                </section>
+            </>
             
         )
     }
