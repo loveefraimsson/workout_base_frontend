@@ -96,6 +96,24 @@
         .inputUserName, .inputPassword {
             width: 17rem;
         }
+
+        .errorMessage {
+            font-size: 1rem;
+            width: 17rem;
+        }
     }
 
+}
+
+
+// ----------------------- BIG SCREEN -------------------------------
+@media only screen and (min-width: 1200px) {
+    .loginForm {
+        padding: 5rem 10rem;
+
+        .loginBtn {
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+        }
+    }
 }

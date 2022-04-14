@@ -67,7 +67,7 @@
         .exerciseContainerContent {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            justify-content: center;
             flex-direction: row;
             width: 80%;
             margin: 2rem auto;
@@ -94,7 +94,7 @@
             width: 90%;
 
             .card {
-                margin: 2rem 0.5rem 2rem 0.5rem;
+                margin: 2rem 1rem 2rem 1rem;
             }
         }
     }  

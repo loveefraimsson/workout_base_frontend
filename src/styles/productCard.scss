@@ -91,3 +91,11 @@
         padding: 1.5rem 4rem;
     }
 }
+
+
+// ----------------------- LAPTOP -------------------------------
+@media only screen and (min-width: 960px) {
+    .productCard {
+        margin: 1rem 1.5rem;
+    }
+}

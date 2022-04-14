@@ -83,7 +83,7 @@
         font-family: $textFont;
         font-size: 1rem;
         font-weight: bold;
-        text-align: center;
+        
     }
 }
 
@@ -112,6 +112,10 @@
             }
             
         }
+
+        .sum {
+            text-align: center;
+        }
     }
     
 
@@ -133,6 +137,21 @@
 
             td {
                 padding: 1rem;
+            }
+        }
+    }
+}
+
+
+// ----------------------- BIG SCREEN -------------------------------
+@media only screen and (min-width: 1200px) {
+    .cartContainer {
+
+        .table {
+
+            .productImage {
+                width: 6rem;
+                height: auto;
             }
         }
     }

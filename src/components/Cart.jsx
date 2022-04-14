@@ -100,7 +100,7 @@ export class Cart extends Component {
 
                     </table>
 
-                    <p className='sum'>Summa: {this.state.sumInCart}kr</p>
+                    <p className='sum'>Summa: {this.state.sumInCart} kr</p>
 
 
                 </section>
