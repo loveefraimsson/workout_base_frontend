@@ -125,3 +125,22 @@
     }
 
 }
+
+
+// ----------------------- LAPTOP -------------------------------
+@media only screen and (min-width: 960px) {
+    .webshopContainer {
+        padding: 0rem 4rem;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .productContainer{ 
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}  

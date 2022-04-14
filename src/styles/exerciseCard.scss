@@ -84,3 +84,18 @@
 
 }
 
+
+// ----------------------- LAPTOP -------------------------------
+@media only screen and (min-width: 960px) {
+    .exerciseCardContainer {
+        padding: 0rem 4rem;
+        
+        .exerciseContainerContent {
+            width: 90%;
+
+            .card {
+                margin: 2rem 0.5rem 2rem 0.5rem;
+            }
+        }
+    }  
+}

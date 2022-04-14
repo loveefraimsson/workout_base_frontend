@@ -27,8 +27,6 @@
 // ----------------------- TABLET -------------------------------
 @media only screen and (min-width: 700px) {
     .workoutbankContainer {
-        
-        
 
         h1 {
             font-size: 1.5rem;
@@ -45,4 +43,20 @@
     
     }
 
+}
+
+
+// ----------------------- LAPTOP -------------------------------
+@media only screen and (min-width: 960px) {
+    .workoutbankContainer {
+        padding: 0rem 4rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .categories {
+            width: 90%;
+        }
+    }
 }
