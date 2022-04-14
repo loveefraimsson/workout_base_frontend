@@ -94,56 +94,71 @@ export class Webshop extends Component {
 
           <section className='productContainer'>
             <h3>Proteinpulver</h3>
-            {
-              this.state.products.map((product, i) => {
-                
-                if(product.category == "Proteinpulver") {
-                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-                }        
-              }) 
-            }
+
+            <section className='products'>
+              {
+                this.state.products.map((product, i) => {
+                  
+                  if(product.category == "Proteinpulver") {
+                    return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                  }        
+                }) 
+              }
+            </section>
+            
           </section>
 
           <hr className='hr' />
 
           <section className='productContainer'>
-          <h3>Aminosyror</h3>
-            {
-              this.state.products.map((product, i) => {
-                
-                if(product.category == "Aminosyror") {
-                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-                }        
-              }) 
-            }
+            <h3>Aminosyror</h3>
+
+            <section className='products'>
+              {
+                this.state.products.map((product, i) => {
+                  
+                  if(product.category == "Aminosyror") {
+                    return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                  }        
+                }) 
+              }
+            </section>
+            
           </section>
 
           <hr className='hr' />
 
           <section className='productContainer'>
-          <h3>PWO</h3>
-            {
-              this.state.products.map((product, i) => {
-                
-                if(product.category == "PWO") {
-                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-                }        
-              }) 
-            }
+            <h3>PWO</h3>
+
+            <section className='products'>
+              {
+                this.state.products.map((product, i) => {
+                  
+                  if(product.category == "PWO") {
+                    return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                  }        
+                }) 
+              }
+            </section>
+            
           </section>
 
           <hr className='hr' />
 
           <section className='productContainer'>
-          <h3>Kläder</h3>
-            {
-              this.state.products.map((product, i) => {
-                
-                if(product.category == "Kläder") {
-                  return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
-                }        
-              }) 
-            }
+            <h3>Kläder</h3>
+            <section className='products'>
+              {
+                this.state.products.map((product, i) => {
+                  
+                  if(product.category == "Kläder") {
+                    return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
+                  }        
+                }) 
+              }
+            </section>
+              
           </section>
                     
         </section>

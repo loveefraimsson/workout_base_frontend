@@ -80,7 +80,7 @@ export class Cart extends Component {
                     {/* <Link className='backButton' to={"/webshop"} >Tillbaka</Link> */}
                     <Link className='backButton' to={{pathname: this.backLink(), state: {product: this.state.fromCurrentProduct}}} >Tillbaka</Link>
 
-                    <table className=''>
+                    <table className='table'>
 
                         <tbody>
                         {
@@ -91,7 +91,7 @@ export class Cart extends Component {
                                 
                                 
                                 <td key={product.price}>{product.price}kr</td>
-                                <td><button onClick={() => this.removeFromCart(product)}>Ta bort</button></td>
+                                <td><button className='deleteBtn' onClick={() => this.removeFromCart(product)}>Ta bort</button></td>
                             </tr>
                             )
                             })

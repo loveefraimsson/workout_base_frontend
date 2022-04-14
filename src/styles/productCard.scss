@@ -39,13 +39,48 @@
             font-size: 0.75rem;
             cursor: pointer;
 
+            &:hover {
+                background-color: $hoverButton;                   
+            }
+    
+            &:active {
+                background-color: $activeButton;
+                color: $white;
+            }
+
             .cartIcon {
                 width: 1.25rem;
+                height: auto;
                 margin-left: 3px;
             }
         }
 
         
+    }
+}
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .productCard {
+        padding: 1.5rem 3rem;
+
+        .productCardImage {
+            width: 10rem;
+        }
+
+        .buySection {
+
+            .buyBtn {
+                font-size: 1rem !important;
+                padding: 1.25rem;
+
+                .cartIcon {
+                    width: 1.5rem;
+                    height: auto;
+                }
+            }
+        }
     }
 }
 

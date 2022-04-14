@@ -85,6 +85,7 @@
 
     .productImage {
         width: 20rem;
+        height: auto;
         display: block;
         margin: 0px auto;
     }
@@ -124,4 +125,52 @@
 
         
     }
+}
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .productContainer {
+
+        .cartSection {
+            padding: 0.75rem;
+
+            .sum {
+                font-size: 1rem !important;
+            }
+        }
+
+        .backButton {
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+        }
+
+        h2 {
+            margin: 2rem 0rem 0rem 0rem;
+        }
+
+        .productImage {
+            width: 25rem;
+        }
+
+        .productDescription {
+            width: 90%;
+        }
+
+        .buySection {
+            justify-content: flex-start;
+
+            .buyBtn {
+                font-size: 1rem;
+                padding: 1.25rem;
+                .cartIcon {
+                    width: 1.5rem;
+                    height: auto;
+                }
+            }
+        }
+
+    }
+
+
 }
