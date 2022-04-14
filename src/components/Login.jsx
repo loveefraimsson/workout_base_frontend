@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/login.scss';
-import '../styles/mediaQuerieTablet.scss';
-import "./style.css"
+
 
 import {
     BrowserRouter as Router,

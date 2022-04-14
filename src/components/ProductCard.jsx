@@ -22,6 +22,10 @@ export class ProductCard extends Component {
         
     }
 
+    scroll = () => {
+        window.scrollTo({ top:0, behavior:'smooth' });
+    }
+
     render() {
 
         const {name, category, image, price} = this.state.product;
@@ -30,7 +34,7 @@ export class ProductCard extends Component {
             <section className='productCard'>
                 
 
-                <Link className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}}><img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />{name}</Link>
+                <Link onClick={this.scroll} className='productCardLink' key={name} to={{pathname:`/webshop/` + name , state: {product: this.state.product}}}><img className='productCardImage' src={require(`./images/webshop/` + image + '.webp')}></img> <br />{name}</Link>
                 
             
                 <section className='buySection'>

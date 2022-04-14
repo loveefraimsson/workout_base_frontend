@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/header.scss';
-import '../styles/mediaQuerieTablet.scss';
 
 import cart from './images/cart.png';
 import logo from "./images/logo.png";

@@ -34,8 +34,9 @@
             .navbar-nav {
                 position: absolute;
                 width: 100vw;
-                min-height: 100vh;
-                top: 100px;
+                height: calc(100vh - 9rem);
+                //min-height: 100%;
+                top: 80px;
                 right: 0;
                 background-color: rgba(255, 255, 255, 0.95);
                 display: flex;
