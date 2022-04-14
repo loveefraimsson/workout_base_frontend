@@ -17,20 +17,41 @@ export class Product extends Component {
 
     componentDidMount = () => {
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
-        this.setState({ numberInCart: productsInCart.length })
+        
+
+        let sum = 0;
+        for(let i = 0; i < productsInCart.length; i++) {
+        sum = sum + productsInCart[i].price;
+
+        this.setState({ numberInCart: productsInCart.length, sum: sum })
+    }
+
+    console.log("sum", sum);
     }    
  
     addInCart = (product) => {
         addToCart(product);
         let productsInCart = JSON.parse(localStorage.getItem("cart"));
-        this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber" })
+
+        let sum = 0;
+
+        for(let i = 0; i < productsInCart.length; i++) {
+        sum = sum + productsInCart[i].price;
+        }
+        console.log("sum", sum);
+
+        setTimeout(() => {
+            this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber", sum: sum })
+        }, 500)
+
+       
         this.animateCartNumber();
     }
 
     animateCartNumber = () => {
         setTimeout(() => {
             this.setState({changeInCart: "" })
-        }, 3000)
+        }, 300)
     }
 
 
@@ -46,9 +67,11 @@ export class Product extends Component {
 
                 <div className='cartSection'>
                     <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}>
-
-                        <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
-                        <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>
+                        <div className='iconAndNumber'>
+                            <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
+                            <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>
+                        </div>
+                        <p className='sum'>Summa: {this.state.sum}kr</p>
 
                     </Link>
                         
@@ -65,7 +88,7 @@ export class Product extends Component {
                 <p className='productDescription'>{description3}</p>
 
                 <section className='buySection'>
-                    <p>{price}</p>
+                    <p>{price}kr</p>
                     <button className='buyBtn' onClick={() => this.addInCart(this.state.product)}>
                         <p>Köp</p>
                         <img className='cartIcon' src={cart} alt="Shoppingcart" />

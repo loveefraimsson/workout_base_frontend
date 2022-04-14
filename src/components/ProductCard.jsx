@@ -34,7 +34,7 @@ export class ProductCard extends Component {
                 
             
                 <section className='buySection'>
-                    <p>{price}</p>
+                    <p>{price}kr</p>
                     <button className='buyBtn' onClick={() => this.addInCart(this.state.product)}>
                         <p>Köp</p>
                         <img className='cartIcon' src={cart} alt="Shoppingcart" />

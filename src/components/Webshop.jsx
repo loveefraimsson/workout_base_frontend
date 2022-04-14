@@ -17,6 +17,7 @@ export class Webshop extends Component {
     url: this.props.url,
     numberInCart: '',
     changeInCart: "",
+    sum: 0,
   }
 
   componentDidMount = () => {
@@ -24,25 +25,46 @@ export class Webshop extends Component {
     .then((res) => res.json())
     .then((data) => {        
         //console.log(data);
-        this.setState({ loadedData: true, products: data});
-    
+        this.setState({ loadedData: true, products: data}); 
     }) 
 
     let products = JSON.parse(localStorage.getItem("cart"));
     //console.log("products.length", products.length);
-    this.setState({ numberInCart: products.length })
+
+    let sum = 0;
+
+    for(let i = 0; i < products.length; i++) {
+      sum = sum + products[i].price;
+    }
+
+    console.log("sum", sum);
+
+    this.setState({ numberInCart: products.length, sum: sum });
   }
 
   updateCartNumber = (productsInCart) => {
     console.log("callback", productsInCart);
-    this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber" })
+
+    let sum = 0;
+
+    for(let i = 0; i < productsInCart.length; i++) {
+      sum = sum + productsInCart[i].price;
+    }
+    console.log("sum", sum);
+
+    
     this.animateCartNumber();
+
+    setTimeout(() => {
+      this.setState({ numberInCart: productsInCart.length, changeInCart: "animateCartNumber", sum: sum })
+    }, 500)
+   
   }
 
   animateCartNumber = () => {
     setTimeout(() => {
         this.setState({changeInCart: "" })
-    }, 3000)
+    }, 300)
   }
 
 
@@ -59,9 +81,12 @@ export class Webshop extends Component {
 
           <div className='cartSection'>
               <Link className='cartLink' to={{pathname: "/cart" , state: {from: "webshop"}}}>
-
+                <div className='iconAndNumber'>
                   <img className='cartIcon' src={cart} alt="Cart-icon" width="30px" />
                   <span id="numberInCart" className={this.state.changeInCart}>{this.state.numberInCart}</span>
+                </div>
+                  
+                  <p className='sum'>Summa: {this.state.sum}kr</p>
 
               </Link>
                         

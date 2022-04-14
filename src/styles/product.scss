@@ -17,28 +17,46 @@
         padding: 0.25rem;
         border-radius: 5px;
 
-        #numberInCart {
-            color: $textColor;
-            display: inline-block;
-            margin-left: 2px;
-            width: 1rem;
-            text-align: center;
-            border: 1px solid black;
-            border-radius: 50%;
-            padding: 4px;
-            font-size: 0.75rem;
-        }
-    
-        .animateCartNumber {
-            animation-name: animateNumber;
-            animation-duration: 1s;
-            
-        }
+        .cartLink {
+            text-decoration: none;
+
+            .iconAndNumber {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #numberInCart {
+                color: $textColor;
+                display: inline-block;
+                margin-left: 2px;
+                width: 1rem;
+                text-align: center;
+                border: 1px solid black;
+                border-radius: 50%;
+                padding: 4px;
+                font-size: 0.75rem;
+            }
         
-        @keyframes animateNumber {
-            from {background-color: $beige;}
-            to {background-color: $activeButton;}
+            .animateCartNumber {
+                animation-name: animateNumber;
+                animation-duration: 1s;
+                
+            }
+            
+            @keyframes animateNumber {
+                from {background-color: $beige;}
+                to {background-color: $activeButton;}
+            }
+    
+            .sum {
+                margin: 3px 0px 0px 0px;
+                color: $textColor;              
+                font-size: 0.75rem;
+            }
         }
+
+        
         
     }
 
