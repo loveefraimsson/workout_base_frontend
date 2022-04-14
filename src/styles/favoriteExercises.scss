@@ -23,7 +23,7 @@
     }
 
     table {
-        margin: 0px auto;
+        margin: 2rem auto;
         text-align: center;
     }
 
@@ -46,7 +46,67 @@
             border-radius: 5px;
             padding: 0.5rem 1rem;
             font-size: 0.75rem;
+            cursor: pointer;
         }
     }
+}
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .favoriteExercisesContainer {
+
+        .backButton {
+            font-size: 1rem; 
+            
+            &:hover {
+                background-color: $hoverButton; 
+            }
+    
+            &:active {
+                background-color: $activeButton;
+                color: $white;
+            }
+        }
+        
+        table {
+
+            width: 31.25rem;
+
+            
+            td, th {
+                padding: 1.5rem;
+                font-size: 1.25rem;
+            }
+            
+            .exerciseTitle {     
+                color: $textColor;
+
+                &:hover {
+                    text-decoration: underline; 
+                    color: $hoverLink;
+                }
+            }           
+    
+            button {
+                padding: 0.75rem 1.25rem;
+                font-size: 1rem;
+
+                &:hover {
+                    background-color: $hoverButton; 
+                }
+        
+                &:active {
+                    background-color: $activeButton;
+                    color: $white;
+                }
+            }
+        }
+     
+            
+    }
+
+
+
 }
 

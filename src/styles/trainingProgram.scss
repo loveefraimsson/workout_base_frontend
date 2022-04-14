@@ -38,7 +38,7 @@
 
     table, thead, th, tr, td {
         font-family: $textFont;
-        font-size: 12px;
+        font-size: 0.75rem;
         border: 1px solid black;
         border-collapse: collapse; 
     
@@ -53,11 +53,77 @@
 
         button {
             margin: 10px;
-            font-size: 12px;
+            font-size: 0.75rem;
             background-color: $beige;
             border: 1px solid black;
             border-radius: 5px;
             padding: 5px 10px;
+            cursor: pointer;
         }
     }
+}
+
+
+
+// ----------------------- TABLET -------------------------------
+@media only screen and (min-width: 700px) {
+    .trainingProgramContainer {
+
+        .backButton, .buttonToWorkoutbank {
+            padding: 0.75rem 1.25rem;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: $hoverButton;         
+            }
+    
+            &:active {
+                background-color: $activeButton;
+                color: $white;
+            }
+        }
+    
+    
+        .title {
+            margin-bottom: 2rem;
+        }
+    
+        table {
+           width: 31.25rem;
+        }
+    
+        table, thead, th, tr, td {
+            font-family: $textFont;
+            font-size: 1rem;
+            border: 1px solid black;
+            border-collapse: collapse; 
+            width: fit-content;
+        
+    
+            th {
+                padding: 1rem;
+            }
+
+            td {
+                padding: 0.75rem 1rem;
+            }
+    
+            button {
+                width: fit-content;
+                font-size: 1rem;
+                padding: 0.75rem 1.25rem;
+                
+                &:hover {
+                    background-color: $hoverButton;                   
+                }
+        
+                &:active {
+                    background-color: $activeButton;
+                    color: $white;
+                }
+
+            }
+        }
+    }
+
 }

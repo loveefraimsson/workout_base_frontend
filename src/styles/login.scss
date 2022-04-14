@@ -38,10 +38,10 @@
         font-size: 1rem;
         font-family: $textFont;
         margin-top: 1em;
+        cursor: pointer;
 
         &:hover {
             background-color: $hoverButton;
-            cursor: pointer;
         }
 
         &:active {
