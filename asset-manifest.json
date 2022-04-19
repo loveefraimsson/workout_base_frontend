@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/workout_base_frontend/static/css/main.51c7495d.css",
-    "main.js": "/workout_base_frontend/static/js/main.989e4ac7.js",
+    "main.js": "/workout_base_frontend/static/js/main.d643c2b0.js",
     "static/js/787.cda612ba.chunk.js": "/workout_base_frontend/static/js/787.cda612ba.chunk.js",
     "static/media/heroImgWorkoutbankNew.jpg": "/workout_base_frontend/static/media/heroImgWorkoutbankNew.e7503bde86c481522a47.jpg",
     "static/media/squats.webp": "/workout_base_frontend/static/media/squats.9cf17b4c0e84ab8c6dc6.webp",
@@ -54,11 +54,11 @@
     "static/media/cart.png": "/workout_base_frontend/static/media/cart.96c73cb49987ccdf1154.png",
     "index.html": "/workout_base_frontend/index.html",
     "main.51c7495d.css.map": "/workout_base_frontend/static/css/main.51c7495d.css.map",
-    "main.989e4ac7.js.map": "/workout_base_frontend/static/js/main.989e4ac7.js.map",
+    "main.d643c2b0.js.map": "/workout_base_frontend/static/js/main.d643c2b0.js.map",
     "787.cda612ba.chunk.js.map": "/workout_base_frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.51c7495d.css",
-    "static/js/main.989e4ac7.js"
+    "static/js/main.d643c2b0.js"
   ]
 }
