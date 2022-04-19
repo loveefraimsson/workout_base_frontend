@@ -33,7 +33,7 @@ class App extends Component {
 
   componentDidMount = () => {
     //fetch('http://localhost:3001/exercises')
-    fetch("http://165.22.193.217:3001/exercises")
+    fetch("https://workoutbankback.herokuapp.com/exercises")
     .then((res) => res.json())
     .then((data) => {        
         console.log(data);
