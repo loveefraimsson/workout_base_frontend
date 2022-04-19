@@ -32,11 +32,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3001/exercises')
-    //fetch("https://testetstesttest.herokuapp.com/exercises")
+    //fetch('http://localhost:3001/exercises')
+    fetch("http://165.22.193.217:3001/exercises")
     .then((res) => res.json())
     .then((data) => {        
-        //console.log(data);
+        console.log(data);
         this.setState({ loadedData: true, exerciseArray: data})
     })  
   }
@@ -60,41 +60,41 @@ class App extends Component {
               
 
               {/* <Route exact path="/workoutbank" component={WorkoutBank} /> */}
-              <Route exact path="/workoutbank">
+              {/* <Route exact path="/workoutbank">
                 <WorkoutBank exerciseArray={this.state.exerciseArray} />
-              </Route>
+              </Route> */}
 
               {/* <Route exact path="/profilepage" component={Profilepage} /> */}
-              <Route exact path="/profilepage">
+              {/* <Route exact path="/profilepage">
                 <Profilepage exerciseArray={this.state.exerciseArray} />
-              </Route>
+              </Route> */}
 
 
               {/* <Route exact path="/trainingprogram" component={TrainingProgram} /> */}
-              <Route exact path="/trainingprogram">
+              {/* <Route exact path="/trainingprogram">
                 <TrainingProgram url={url} />
-              </Route>
+              </Route> */}
 
               {/* <Route exact path="/webshop" component={Webshop} /> */}
-              <Route exact path="/webshop">
+             {/*  <Route exact path="/webshop">
                 <Webshop url={url} />
-              </Route>
-
-              <Route exact path="/webshop/:params" component={Product} />
+              </Route> */}
+{/* 
+              <Route exact path="/webshop/:params" component={Product} /> */}
               {/* <Route exact path="/webshop/:params">
                 <Product />
               </Route> */}
 
-              <Route exact path="/cart" component={Cart} />
+              {/* <Route exact path="/cart" component={Cart} />
 
               <Route exact path="/workoutbank/:params" component={ExerciseCard} />
-              <Route exact path="/workoutbank/:params/:params" component={Exercise} />
+              <Route exact path="/workoutbank/:params/:params" component={Exercise} /> */}
               
 
               {/* <Route exact path="/favoriteexercises" component={FavoriteExercises} /> */}
-              <Route exact path="/favoriteexercises">
+              {/* <Route exact path="/favoriteexercises">
                 <FavoriteExercises url={url} exerciseArray={this.state.exerciseArray} />
-              </Route>
+              </Route> */}
 
               
 
