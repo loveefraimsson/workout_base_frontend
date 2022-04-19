@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import '../styles/favoriteExercises.scss';
-import { fetchFavorite } from './fetchFavorite';
-
-
 
 export class FavoriteExercises extends Component {
 
@@ -16,17 +13,8 @@ export class FavoriteExercises extends Component {
     url: this.props.url
   }
 
+  //Fetches all favorites from database and sets to state
   componentDidMount = () => {
-
-    /* let userName = {userName: this.state.userName}
-    console.log("userName", userName);
-    
-    fetchFavorite((userName, cb) => {
-      this.setState({ favoriteExercises: cb })
-    });
-    
-    this.setState({loadedData: true}); */
-
 
     fetch(this.state.url + "favoriteexercises", {
       method: "post",
@@ -42,9 +30,8 @@ export class FavoriteExercises extends Component {
     });
   }
 
+  //Removes exercise from favorite
   removeFavorite = (exercise) => {
-    //console.log(exercise.exerciseTitle);
-
     let objectToRemove = {
       title: exercise.title,
       category: exercise.category,
@@ -54,8 +41,6 @@ export class FavoriteExercises extends Component {
       video: exercise.video,
       userName: this.state.userName
     }
-
-    console.log(objectToRemove);
 
     fetch(this.state.url + "removeexercise", {
       method: "post",
@@ -91,8 +76,7 @@ export class FavoriteExercises extends Component {
                   <th>Övning</th>
                   <th>Kategori</th>
                   <th>Ta bort</th>
-                </tr>
-                
+                </tr>               
               </thead>
 
             <tbody>
@@ -110,7 +94,6 @@ export class FavoriteExercises extends Component {
               })
             }
             </tbody>
-
           </table>
 
         </section>

@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,IAAI,AAAC,CACD,QAAQ,CAAE,QAAQ,CAClB,UAAU,CAAE,kBAAkB,CAE9B,cAAc,CAAE,IAAI,CAEvB",
+    "mappings": "ACAA,OAAO,CAAC,iEAAI,CACZ,OAAO,CAAC,2EAAI,CDCZ,AAAA,IAAI,AAAC,CACD,QAAQ,CAAE,QAAQ,CAClB,UAAU,CAAE,kBAAkB,CAC9B,cAAc,CAAE,IAAI,CACvB",
     "sources": [
         "../../src/styles/App.scss",
         "../../src/styles/_global.scss"

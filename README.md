@@ -41,3 +41,9 @@ Andra paket som jag har använt är nodemon, cors och html-react-parser.
 
 ## API
 API:et som används i projektet är: https://type.fit/api/quotes
+
+## Media queries
+400px --> Mobil
+700px --> Surfplatta
+960px --> Laptop
+1200 --> Stor skärm

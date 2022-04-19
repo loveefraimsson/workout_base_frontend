@@ -2,6 +2,7 @@
 
 .heroWebshop {
     width: 100%;
+    height: auto;
 }
 
 .webshopContainer {
@@ -9,7 +10,6 @@
     margin: 2rem 0rem 5rem 0rem;
     padding: 0rem 1.5rem;
     
-
     h2 {
         font-family: $headingFont;
         font-size: 1.5rem;
@@ -25,10 +25,17 @@
         cursor: pointer;
         background-color: $beige;
         padding: 0.25rem;
-        border-radius: 5px;
-        
+        border-radius: 5px;       
         font-family: $textFont;
         text-decoration: none;
+
+        &:hover {
+            background-color: $hoverButton;
+        }
+
+        &:active {
+            background-color: $activeButton;
+        }
 
         .cartLink {
             text-decoration: none;
@@ -67,13 +74,10 @@
                 color: $textColor;              
                 font-size: 0.75rem;
             }
-        }
-
-        
+        }       
     }
 
     .productContainer{
-
 
         h3 {
             font-size: 1rem;
@@ -82,7 +86,6 @@
         }
     }
     
-
     hr.hr {
        border-top: 1px solid grey;
        width: 90%;
@@ -94,19 +97,19 @@
 @media only screen and (min-width: 700px) {
     .webshopContainer {
         
-
         .cartSection {
             padding: 0.75rem;
 
-            .sum {
-                font-size: 1rem !important;
+            .cartLink {
+                .sum {
+                    font-size: 1rem;
+                }
             }
         }
 
         .productContainer{
             margin-top: 7rem;
             
-
             h3 {
                 font-size: 1rem;
                 font-family: $headingFont;

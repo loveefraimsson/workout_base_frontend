@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import Login from './Login';
 import Header from './Header';
 import { Link } from 'react-router-dom';
-
 import '../styles/startpage.scss';
-
 
 export class Startpage extends Component {
 
-
-  
   render() {
     
     let isLoggedIn = localStorage.getItem('loggedIn');
@@ -19,16 +15,13 @@ export class Startpage extends Component {
       return (
         <>
         <Header />
-          <section className='startPageContainer'>
-            
+          <section className='startPageContainer'>          
             <section className='startPageContent'>
               <h2 className='welcomeTitle'>Hej {localStorage.getItem("userName")}!</h2>
                 <p>Snabbåtkomst:</p>
                 <Link className='quickAccessLink' to="trainingprogram">Ditt träningsprogram</Link>
                 <Link className='quickAccessLink' to="favoriteexercises">Dina favoritövningar</Link>
-            </section>
-            
-            
+            </section>                       
           </section>
         </>
       )
@@ -41,14 +34,10 @@ export class Startpage extends Component {
           <section className='startPageContent'>
             <h1 className='welcomeTitle'>Välkommen, vänligen logga in!</h1>
           <Login />
-          </section>
-          
-          
+          </section>         
         </section>
       )
     }
-
-
   }
 }
 

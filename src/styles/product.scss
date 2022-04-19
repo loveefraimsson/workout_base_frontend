@@ -17,6 +17,14 @@
         padding: 0.25rem;
         border-radius: 5px;
 
+        &:hover {
+            background-color: $hoverButton;                   
+        }
+
+        &:active {
+            background-color: $activeButton;
+        }
+
         .cartLink {
             text-decoration: none;
 
@@ -54,10 +62,7 @@
                 color: $textColor;              
                 font-size: 0.75rem;
             }
-        }
-
-        
-        
+        }       
     }
 
     .backButton {
@@ -79,7 +84,6 @@
             background-color: $activeButton;
             color: $white;
         }
-
     }
 
     h2 {
@@ -139,11 +143,10 @@
 
             .cartIcon {
                 width: 1.25rem;
+                height: auto;
                 margin-left: 3px;
             }
-        }
-
-        
+        }       
     }
 }
 
@@ -155,9 +158,11 @@
         .cartSection {
             padding: 0.75rem;
 
-            .sum {
-                font-size: 1rem !important;
-            }
+            .cartLink {
+                .sum {
+                    font-size: 1rem;
+                }
+            }     
         }
 
         .backButton {
@@ -191,8 +196,6 @@
         }
 
     }
-
-
 }
 
 

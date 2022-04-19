@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import '../styles/exercise.scss';
-import Loader from './Loader';
 
 
 
@@ -38,29 +37,22 @@ export class Exercise extends Component {
     })
     .then(res => res.json())
     .then(data => {
-        //console.log("data[0].favoriteExercises", data[0].favoriteExercises);
         this.setState({ loadedData: true })
 
         let favoriteExercises = data[0].favoriteExercises;
         let title = this.state.exercise.title;
-        //console.log("title", title);
-
 
         //Checks if current exercise is marked as favorite, if it is in favorite exercises then sets state to true, otherwise not. Doing this to render the right button
         favoriteExercises.map((exercise, i) => {
           if(exercise.title === title) {
-            //console.log("Rätt");
             this.setState({ favoriteMarked: true })
-          }
-          else {
-            //this.setState({ favoriteMarked: false })
           }
         })
     }); 
   }
 
 
-  
+  //Toggles between favoritemark an exercise and remove as favorite
   favoriteMarkToggle = () => {
     let exerciseTitle = this.state.exercise.title;
     let exerciseCategory = this.state.category;
@@ -75,12 +67,9 @@ export class Exercise extends Component {
       video: this.state.exercise.video,
       userName: localStorage.getItem("userName")
     }
-
-    //console.log(favoriteExercise);
     
     //Saves exercise as favorite in database
     if(this.state.favoriteMarked === false) {
-
       this.setState({ favoriteMarked: true })
 
       fetch("http://localhost:3001/savefavorite", {
@@ -93,7 +82,6 @@ export class Exercise extends Component {
       .then(res => res.json())
       .then(data => {
           //console.log("data", data);
-          //this.setState({ favoriteExercises: data })
       });
     }
 
@@ -116,25 +104,15 @@ export class Exercise extends Component {
     }
   }
 
-
-
-
-
-
+  //Handles change in input fields to save in trainingprogram
   handleChange = (evt) => {
-    //console.log("name", evt.target.name);
-    //console.log("value", evt.target.value);
-    //let exerciseTitle = this.state.exercise.title;
-    //let exerciseCategory = this.state.category;
-
     this.setState({ [evt.target.name]: evt.target.value });
   }
 
+  //Saves exercise in trainingprogram
   saveInProgram = (evt) => {
     evt.preventDefault();
-
-    // if(this.state.sets != null && this.state.sets != " " && this.state.reps != null && this.state.reps != " ") {
-    
+ 
     if(this.state.sets && this.state.reps) {
       console.log("Inte null");
       let addThisExercise = {
@@ -168,11 +146,10 @@ export class Exercise extends Component {
     else {
       console.log("Något är null, alla fält måste vara ifyllda");
       this.setState({ isFilled: false })
-    }
-
-    
+    }   
   }
 
+  //Prints error message if the input details is wrong
   printErrorMessage = () => {
    
       if(this.state.isFilled === false) {
@@ -199,41 +176,38 @@ export class Exercise extends Component {
   render() {
     if(!this.state.loadedData) return <></>
 
-  
-
     return (
       <>
        
-      <Header />
-        {/* <Link className='backButton' to={{pathname:`/workoutbank/` + this.state.exercise.category, state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link> */} 
-      <section className='exerciseContainer'>
-        <Link className='backButton' to={{pathname: this.backLink(), state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
-        
-        <h2 className='title'>{this.state.exercise.title}</h2>
-        
-        <form className='trainingProgramForm' onSubmit={this.saveInProgram}>
-          <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
-          <input id="inputSets" name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> <br />
-          <input id="inputReps" name='reps' type="number" placeholder='Reps; ex. 4' onChange={this.handleChange} /><br />
-          <textarea id="inputComments" name="comments" placeholder='Kommentarer...' cols="20" rows="5" onChange={this.handleChange}></textarea> <br />
-          <button type='submit'>Spara</button>
-          {this.printErrorMessage()}  
-        </form>
+        <Header />
+        <section className='exerciseContainer'>
+          <Link className='backButton' to={{pathname: this.backLink(), state: {oneExercise: this.state.exercise, category: this.state.category, exerciseArray: this.state.exerciseArray}}} >Tillbaka</Link>
+          
+          <h2 className='title'>{this.state.exercise.title}</h2>
+          
+          <form className='trainingProgramForm' onSubmit={this.saveInProgram}>
+            <p>Vill du spara denna övningen i ditt träningsprogram? Fyll i uppgifter nedan:</p>
+            <input id="inputSets" name='sets' type="number" placeholder='Sets; ex. 1' onChange={this.handleChange} /> <br />
+            <input id="inputReps" name='reps' type="number" placeholder='Reps; ex. 4' onChange={this.handleChange} /><br />
+            <textarea id="inputComments" name="comments" placeholder='Kommentarer...' cols="20" rows="5" onChange={this.handleChange}></textarea> <br />
+            <button type='submit'>Spara</button>
+            {this.printErrorMessage()}  
+          </form>
 
-        {this.state.favoriteMarked ? (
-          <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Ta bort favoritmarkering</button>
-        ): <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Favoritmarkera</button>
+          {this.state.favoriteMarked ? (
+            <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Ta bort favoritmarkering</button>
+          ): <button className='favoriteButton' onClick={this.favoriteMarkToggle}>Favoritmarkera</button>
 
-        }
+          }
 
-        <h3>Beskrivning</h3>
-        <p className='exerciseDescription'>{this.state.exercise.description1}</p>
-        <p className='exerciseDescription'>{this.state.exercise.description2}</p>
+          <h3>Beskrivning</h3>
+          <p className='exerciseDescription'>{this.state.exercise.description1}</p>
+          <p className='exerciseDescription'>{this.state.exercise.description2}</p>
 
-        <img className='exerciseImage' src={require(`./images/exercises/` + this.state.exercise.image + '.webp')}></img>
+          <img className='exerciseImage' src={require(`./images/exercises/` + this.state.exercise.image + '.webp')} alt="Muscles used in the exercise"></img>
 
-        {parse(this.state.exercise.video)}
-      </section>
+          {parse(this.state.exercise.video)}
+        </section>
         
       </>
     )

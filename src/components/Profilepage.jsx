@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import '../styles/profilePage.scss';
-
 import { Link } from 'react-router-dom';
+import '../styles/profilePage.scss';
 
 
 export class Profilepage extends Component {
@@ -17,7 +16,6 @@ export class Profilepage extends Component {
             <Link className='trainingProgramLink' to="trainingprogram">Ditt träningsprogram</Link>
             <Link className='favoriteExerciseLink' to="favoriteexercises">Dina favoritövningar</Link>
             
-
         </section>
       </>
     )

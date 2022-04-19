@@ -7,14 +7,12 @@
     font-family: $textFont;
 
     p {
-        //text-decoration: underline;
         font-weight: bold;
     }
 
     .quickAccessLink {
         color: $textColor;
         display: block;
-        //text-decoration: none;
         margin-bottom: 1rem;
     }
 
@@ -50,6 +48,5 @@
 @media only screen and (min-width: 960px) {
     .startPageContent{
         padding: 0rem 4rem;
-
     }
 }

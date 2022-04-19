@@ -38,8 +38,8 @@
         }
         &:active {
             background-color: $activeButton;
-        }
-    
+            color: $white;
+        }    
     }
 }
 
@@ -48,7 +48,5 @@
 @media only screen and (min-width: 960px) {
     .categoryBox {
         margin: 0rem 1rem 2rem 0rem;
-
     }
-
 }

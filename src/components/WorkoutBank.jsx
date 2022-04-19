@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import ExerciseCard from './ExerciseCard';
-import { Link } from 'react-router-dom';
 import Categories from './Categories';
-import Loader from './Loader';
-
 import '../styles/workoutbank.scss';
 
 export class WorkoutBank extends Component {
@@ -14,22 +10,8 @@ export class WorkoutBank extends Component {
         exerciseArray: this.props.exerciseArray,
     }
 
-    /* componentDidMount = () => {
-        fetch(this.state.url + 'exercises')
-        .then((res) => res.json())
-        .then((data) => {        
-            //console.log(data);
-            //console.log(data[0].video);
-            this.setState({ loadedData: true, exerciseArray: data})
-        })  
-    } */
-
     render() {
-
-
-       /*  if(!this.state.loadedData) return <Loader /> */
-
-        
+       
         let allCategories = [];
         let exerciseArray = this.state.exerciseArray;
         let findCategory;
@@ -41,8 +23,6 @@ export class WorkoutBank extends Component {
             if(!findCategory) {
                 allCategories.push(this.state.exerciseArray[i].category);
             }
-
-            //console.log("allCategories", allCategories);
             
         }
 

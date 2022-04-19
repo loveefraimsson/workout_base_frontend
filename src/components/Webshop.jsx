@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import Header from './Header';
 import heroImgWorkoutbank from "./images/heroImgWorkoutbankNew.jpg";
 import ProductCard from './ProductCard';
-
 import { Link } from 'react-router-dom';
-
 import cart from './images/cart.png';
-
 import '../styles/webshop.scss';
 
 export class Webshop extends Component {
@@ -20,39 +17,32 @@ export class Webshop extends Component {
     sum: 0,
   }
 
+  //Fetches all products from database
   componentDidMount = () => {
     fetch(this.state.url + 'webshop')
     .then((res) => res.json())
     .then((data) => {        
-        //console.log(data);
         this.setState({ loadedData: true, products: data}); 
     }) 
 
     let products = JSON.parse(localStorage.getItem("cart"));
-    //console.log("products.length", products.length);
 
     let sum = 0;
-
     for(let i = 0; i < products.length; i++) {
       sum = sum + products[i].price;
     }
 
-    console.log("sum", sum);
-
     this.setState({ numberInCart: products.length, sum: sum });
   }
 
+
+  //Updates number of products in cart
   updateCartNumber = (productsInCart) => {
-    console.log("callback", productsInCart);
-
     let sum = 0;
-
     for(let i = 0; i < productsInCart.length; i++) {
       sum = sum + productsInCart[i].price;
     }
-    console.log("sum", sum);
 
-    
     this.animateCartNumber();
 
     setTimeout(() => {
@@ -61,6 +51,7 @@ export class Webshop extends Component {
    
   }
 
+  //Animates the numebr when a product is added in cart
   animateCartNumber = () => {
     setTimeout(() => {
         this.setState({changeInCart: "" })
@@ -88,8 +79,7 @@ export class Webshop extends Component {
                   
                   <p className='sum'>Summa: {this.state.sum}kr</p>
 
-              </Link>
-                        
+              </Link>                       
           </div>
 
           <section className='productContainer'>
@@ -104,8 +94,7 @@ export class Webshop extends Component {
                   }        
                 }) 
               }
-            </section>
-            
+            </section>           
           </section>
 
           <hr className='hr' />
@@ -122,8 +111,7 @@ export class Webshop extends Component {
                   }        
                 }) 
               }
-            </section>
-            
+            </section>           
           </section>
 
           <hr className='hr' />
@@ -140,8 +128,7 @@ export class Webshop extends Component {
                   }        
                 }) 
               }
-            </section>
-            
+            </section>           
           </section>
 
           <hr className='hr' />

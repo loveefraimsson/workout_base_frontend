@@ -1,7 +1,6 @@
 @import "./global.scss";
 
 .favoriteExercisesContainer {
-
     margin: 2rem 0rem 5rem 0rem;
     padding: 0rem 1.5rem;
 
@@ -70,10 +69,8 @@
         }
         
         table {
-
             width: 31.25rem;
-
-            
+           
             td, th {
                 padding: 1.5rem;
                 font-size: 1.25rem;
@@ -101,13 +98,8 @@
                     color: $white;
                 }
             }
-        }
-     
-            
+        }          
     }
-
-
-
 }
 
 
@@ -121,7 +113,6 @@
         table {
             width: 80%;
         }
-
     }
 }
 

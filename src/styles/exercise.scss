@@ -1,7 +1,6 @@
 @import "./global.scss";
 
 .exerciseContainer {
-
     margin: 2rem 0rem 5rem 0rem;
     padding: 0rem 1.5rem;
 
@@ -22,6 +21,7 @@
     
         &:active {
             background-color: $activeButton;
+            color: $white;
         }
     }
 
@@ -106,7 +106,6 @@
         }
     }
     
-    
     .favoriteButton {
         background-color: $beige;
         border: 1px solid black;
@@ -123,6 +122,7 @@
     
         &:active {
             background-color: $activeButton;
+            color: $white;
         }
     }
 
@@ -189,7 +189,6 @@
 
         .exerciseDescription {
             width: 90%;
-
         }
 
         .exerciseImage {
@@ -236,9 +235,7 @@
             button {
                 font-size: 1.25rem;
                 padding: 0.75rem 3rem;
-            }
-
-            
+            }          
         }
 
         .favoriteButton {

@@ -34,7 +34,6 @@
             width: fit-content;
             text-align: center;
             margin: 2rem auto 2rem auto;
-            //margin-bottom: 2rem;
             background-color: $beige;
             cursor: pointer;
             box-shadow: 5px 8px 10px #999;
@@ -48,8 +47,8 @@
             }
             &:active {
                 background-color: $activeButton;
+                color: $white;
             }
-
         }
     }
 }
@@ -81,7 +80,6 @@
             }
         }
     }
-
 }
 
 

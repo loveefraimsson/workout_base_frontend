@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import '../styles/header.scss';
-
-import cart from './images/cart.png';
 import logo from "./images/logo.png";
 import hamburgerIcon from "./images/hamburgerIcon.png";
 import crossIcon from "./images/crossIcon.png";
-
 import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
-
 
 
 export class Header extends Component {
@@ -46,14 +42,12 @@ export class Header extends Component {
       console.log("Samma sida, menyn ska bara stängas");
       this.setState({ showMenu: false })
     }
-
   }
 
   logout = () => {
     this.setState({showMenu: false });
   }
 
- 
   render() {
 
     let buttons;
@@ -65,34 +59,33 @@ export class Header extends Component {
           <section className='toggleContainer'>
 
             {this.state.showMenu ? (
-              <img className='menuToggleIcon' src={crossIcon} onClick={this.handleMenu} alt="" />
-            ) : <img className='menuToggleIcon' src={hamburgerIcon} onClick={this.handleMenu} alt="" />
+              <button className='menuBtn' tabIndex="0" onClick={this.handleMenu}><img className='menuToggleIcon' src={crossIcon} onClick={this.handleMenu} alt="Hamburger-menu" /></button> 
+            ) : <button className='menuBtn' tabIndex="0" onClick={this.handleMenu}><img className='menuToggleIcon' src={hamburgerIcon} onClick={this.handleMenu} alt="Close hamburger menu" /></button>
 
             }
 
-              {this.state.showMenu ? (
-                <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
-                  <li className='navItem'>
-                    <Link onClick={() => this.closeMenu("profilepage")} className="navLink" to="/profilepage" >Profilsida</Link>           
-                  </li>
+            {this.state.showMenu ? (
+              <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
+                <li className='navItem'>
+                  <Link onClick={() => this.closeMenu("profilepage")} className="navLink" to="/profilepage" >Profilsida</Link>           
+                </li>
 
-                  <li className='navItem'>
-                    <Link onClick={() => this.closeMenu("workoutbank")} className="navLink" to="/workoutbank" >Övningar</Link>
-                  </li>
+                <li className='navItem'>
+                  <Link onClick={() => this.closeMenu("workoutbank")} className="navLink" to="/workoutbank" >Övningar</Link>
+                </li>
 
-                  <li className='navItem'>
-                    <Link onClick={() => this.closeMenu("webshop")} className="navLink" to="/webshop" >Webshop</Link>
-                  </li>
+                <li className='navItem'>
+                  <Link onClick={() => this.closeMenu("webshop")} className="navLink" to="/webshop" >Webshop</Link>
+                </li>
 
-                  <li className='navItem'>
-                    <Link className="navLink" to="/" onClick={() => localStorage.clear() + this.logout()}>Logga ut</Link>
-                  </li>
-                </ul>
-                ) : null
+                <li className='navItem'>
+                  <Link className="navLink" to="/" onClick={() => localStorage.clear() + this.logout()}>Logga ut</Link>
+                </li>
+              </ul>
+              ) : null
 
-              }
-            
-            
+            }
+                       
           </section>
         </section>
         
@@ -110,7 +103,6 @@ export class Header extends Component {
          
           <nav className='navbarContainer'>
               {buttons}
-
           </nav>
        
       </header>
