@@ -25,7 +25,6 @@ export class FavoriteExercises extends Component {
     })
     .then(res => res.json())
     .then(data => {
-        //console.log(data[0].favoriteExercises);
         this.setState({ loadedData: true, favoriteExercises: data[0].favoriteExercises })
     });
   }
@@ -51,7 +50,6 @@ export class FavoriteExercises extends Component {
       })
     .then(res => res.json())
     .then(data => {
-        console.log("data", data);
         this.setState({ favoriteExercises: data })
     });
   }

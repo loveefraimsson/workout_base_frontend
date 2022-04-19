@@ -81,7 +81,6 @@ export class Exercise extends Component {
       })
       .then(res => res.json())
       .then(data => {
-          //console.log("data", data);
       });
     }
 
@@ -98,7 +97,7 @@ export class Exercise extends Component {
       })
       .then(res => res.json())
       .then(data => {
-          //console.log("data", data);
+
       });
 
     }
@@ -114,7 +113,6 @@ export class Exercise extends Component {
     evt.preventDefault();
  
     if(this.state.sets && this.state.reps) {
-      console.log("Inte null");
       let addThisExercise = {
         title: this.state.title,
         category: this.state.category,
@@ -123,7 +121,6 @@ export class Exercise extends Component {
         comments: this.state.comments,
         userName: this.state.userName,
       }
-      console.log(addThisExercise);
       this.setState({ isFilled: true });
 
       fetch("http://localhost:3001/addinprogram", {
@@ -135,7 +132,6 @@ export class Exercise extends Component {
         })
         .then(res => res.json())
         .then(data => {
-            console.log("data", data);
             this.setState({ savedInProgram: true, sets: null, reps: null, comments: null });
             document.getElementById("inputSets").value = "";
             document.getElementById("inputReps").value = "";
@@ -144,7 +140,6 @@ export class Exercise extends Component {
       
     }
     else {
-      console.log("Något är null, alla fält måste vara ifyllda");
       this.setState({ isFilled: false })
     }   
   }

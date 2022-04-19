@@ -43,7 +43,6 @@ class Login extends Component {
         .then(res => res.json())
         .then(data => {
 
-            console.log(data);
             //If the login details is correct
            if(data.code === "Success") {
                 localStorage.setItem("loggedIn", true);

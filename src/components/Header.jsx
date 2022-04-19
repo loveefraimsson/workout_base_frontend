@@ -39,7 +39,6 @@ export class Header extends Component {
     let currentPage = currentUrl.slice(22);
    
     if(pageFromClick === currentPage) {
-      console.log("Samma sida, menyn ska bara stängas");
       this.setState({ showMenu: false })
     }
   }

@@ -22,7 +22,6 @@ export class TrainingProgram extends Component {
           })
           .then(res => res.json())
           .then(data => {
-            //console.log("traningprogram from DB:", data);
             this.setState({ loadedData: true, trainingProgram: data })
           });
     }
@@ -84,7 +83,7 @@ export class TrainingProgram extends Component {
                     return (<tr key={i} >
                       <td className='exerciseTitle' key={exercise.title}>{exercise.title}</td>
                       <td key={exercise.sets}>{exercise.sets}</td>
-                      <td key={exercise.reps}>{exercise.reps}</td>
+                      <td key={exercise.reps + i}>{exercise.reps}</td>
                       <td key={exercise.comments}>{exercise.comments}</td>
                       <td><button onClick={() => this.removeFromProgram(exercise)}>Ta bort</button></td>
                     </tr>
