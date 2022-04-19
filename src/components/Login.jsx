@@ -33,7 +33,8 @@ class Login extends Component {
         }
 
         //Checks user against database
-        fetch("http://localhost:3001/login", {
+        //fetch("http://localhost:3001/login", {
+        fetch("https://workoutbankback.herokuapp.com/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
