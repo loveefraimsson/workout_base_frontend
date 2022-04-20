@@ -36,7 +36,7 @@ Klona ner repot för att få frontenden av applikationen. Kör följande kommand
  npm start
 ```
 
-Backenden ligger live så den behöver inte göras något med för att köra projektet lokalt.
+Backenden ligger live så den behöver inte göras något med för att köra projektet lokalt. Dock, väljer man att köra mot lokal backend så behöver man ändra då att alla fetch-länkar pekar lokalt. 
 
 ## Ramverk bibliotek och paket
 Jag har använt mig av React.js, Express.js, MongoDB som databas och Node.js. Jag har även använt Sass för CSS.
