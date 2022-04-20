@@ -1,6 +1,6 @@
 # WorkoutBase - Examensarbete
 
-Detta är ett projekt som jag har gjort som mitt examensarbete. Som användare loggar man in på sin egen sida, där kan man välja att bläddra i en övningsdatabas, spara sina favoritövningar eller göra sitt eget träningsprogram. Dessa kanman sedan se från sin profilsida. Webbsidan har också en webshop där man kan lägga sina varor man vill köpa i varukorgen.
+Detta är ett projekt som jag har gjort som mitt examensarbete. Som användare loggar man in på sin egen sida, där kan man välja att bläddra i en övningsdatabas, spara sina favoritövningar eller göra sitt eget träningsprogram. Dessa kan man sedan se från sin profilsida. Webbsidan har också en webshop där man kan lägga sina varor man vill köpa i varukorgen.
 
 ## Bakgrund
 
@@ -35,6 +35,7 @@ Klona ner repot för att få frontenden av applikationen. Kör följande kommand
  npm install
  npm start
 ```
+
 Backenden ligger live så den behöver inte göras något med för att köra projektet lokalt.
 
 ## Ramverk bibliotek och paket
