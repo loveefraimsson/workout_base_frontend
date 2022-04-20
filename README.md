@@ -9,7 +9,9 @@ Jag fick denna idé då jag själv är väldigt intresserad av träning och när
 ## Live-version och backend
 
 [Här kan du se webbsidan live](https://workout-base-frontend.vercel.app/)
-[Här är backend-repot för projektet](https://github.com/loveefraimsson/workout_base_backend) 
+
+[Här är backend-repot för projektet](https://github.com/loveefraimsson/workout_base_backend)
+
 
 ## Inloggningsuppgifter
 
@@ -43,7 +45,9 @@ Andra paket som jag har använt är nodemon, cors och html-react-parser.
 API:et som används i projektet är: https://type.fit/api/quotes
 
 ## Media queries
+```bash
 400px --> Mobil
 700px --> Surfplatta
 960px --> Laptop
 1200 --> Stor skärm
+```
