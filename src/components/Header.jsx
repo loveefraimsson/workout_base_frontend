@@ -33,16 +33,6 @@ export class Header extends Component {
     }
   }
 
-  //If the link is the same as the current page, the menu just closes
-  closeMenu = (pageFromClick) => {  
-    let currentUrl = window.location.href;
-    let currentPage = currentUrl.slice(22);
-   
-    if(pageFromClick === currentPage) {
-      this.setState({ showMenu: false })
-    }
-  }
-
   logout = () => {
     this.setState({showMenu: false });
   }
@@ -66,15 +56,15 @@ export class Header extends Component {
             {this.state.showMenu ? (
               <ul className={`navbar-nav ` + this.state.animationCloseMenu + this.state.animationShowMenu}>
                 <li className='navItem'>
-                  <Link onClick={() => this.closeMenu("profilepage")} className="navLink" to="/profilepage" >Profilsida</Link>           
+                  <Link className="navLink" to="/profilepage" >Profilsida</Link>           
                 </li>
 
                 <li className='navItem'>
-                  <Link onClick={() => this.closeMenu("workoutbank")} className="navLink" to="/workoutbank" >Övningar</Link>
+                  <Link className="navLink" to="/workoutbank" >Övningar</Link>
                 </li>
 
                 <li className='navItem'>
-                  <Link onClick={() => this.closeMenu("webshop")} className="navLink" to="/webshop" >Webshop</Link>
+                  <Link className="navLink" to="/webshop" >Webshop</Link>
                 </li>
 
                 <li className='navItem'>

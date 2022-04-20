@@ -28,7 +28,7 @@ export class Exercise extends Component {
 
   //Gets all favorite exercises
   componentDidMount = () => {
-    fetch("http://localhost:3001/favoriteexercises", {
+    fetch("https://workoutbankback.herokuapp.com/favoriteexercises", {
     method: "post",
     headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export class Exercise extends Component {
     if(this.state.favoriteMarked === false) {
       this.setState({ favoriteMarked: true })
 
-      fetch("http://localhost:3001/savefavorite", {
+      fetch("https://workoutbankback.herokuapp.com/savefavorite", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export class Exercise extends Component {
     else {
       this.setState({ favoriteMarked: false });
 
-      fetch("http://localhost:3001/removeexercise", {
+      fetch("https://workoutbankback.herokuapp.com/removeexercise", {
         method: "post",
         headers: {
             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ export class Exercise extends Component {
       }
       this.setState({ isFilled: true });
 
-      fetch("http://localhost:3001/addinprogram", {
+      fetch("https://workoutbankback.herokuapp.com/addinprogram", {
           method: "post",
           headers: {
               "Content-Type": "application/json",

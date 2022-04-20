@@ -87,9 +87,9 @@ export class Webshop extends Component {
 
             <section className='products'>
               {
-                this.state.products.map((product, i) => {
+                this.state.products.map((product) => {
                   
-                  if(product.category == "Proteinpulver") {
+                  if(product.category === "Proteinpulver") {
                     return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
                   }        
                 }) 
@@ -104,9 +104,9 @@ export class Webshop extends Component {
 
             <section className='products'>
               {
-                this.state.products.map((product, i) => {
+                this.state.products.map((product) => {
                   
-                  if(product.category == "Aminosyror") {
+                  if(product.category === "Aminosyror") {
                     return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
                   }        
                 }) 
@@ -121,9 +121,9 @@ export class Webshop extends Component {
 
             <section className='products'>
               {
-                this.state.products.map((product, i) => {
+                this.state.products.map((product) => {
                   
-                  if(product.category == "PWO") {
+                  if(product.category === "PWO") {
                     return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
                   }        
                 }) 
@@ -137,9 +137,9 @@ export class Webshop extends Component {
             <h3>Kläder</h3>
             <section className='products'>
               {
-                this.state.products.map((product, i) => {
+                this.state.products.map((product) => {
                   
-                  if(product.category == "Kläder") {
+                  if(product.category === "Kläder") {
                     return <ProductCard key={product.name} product={product} updateCartNumber={this.updateCartNumber} />
                   }        
                 }) 

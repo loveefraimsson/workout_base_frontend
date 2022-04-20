@@ -24,7 +24,7 @@ export class ProductCard extends Component {
 
     render() {
 
-        const {name, category, image, price} = this.state.product;
+        const {name, image, price} = this.state.product;
 
         return (
             <section className='productCard'>

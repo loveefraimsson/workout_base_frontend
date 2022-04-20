@@ -1,7 +1,5 @@
-import {React, useState, useEffect} from 'react';
-import ExerciseCard from './ExerciseCard';
+import {React, useState} from 'react';
 import { Link } from 'react-router-dom';
-import Header from './Header';
 import '../styles/categories.scss';
 
 

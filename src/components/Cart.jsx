@@ -38,9 +38,9 @@ export class Cart extends Component {
     removeFromCart = (product) => {
         let productsInLocalStorage = JSON.parse(localStorage.getItem("cart"));
 
-        let findProduct = productsInLocalStorage.find((productsInLocalStorage) => productsInLocalStorage.id == product.id);
+        let findProduct = productsInLocalStorage.find((productsInLocalStorage) => productsInLocalStorage.id === product.id);
 
-        let newCartArray = productsInLocalStorage.filter(product => product.id != findProduct.id)
+        let newCartArray = productsInLocalStorage.filter(product => product.id !== findProduct.id)
 
         localStorage.setItem("cart",  JSON.stringify(newCartArray))
 

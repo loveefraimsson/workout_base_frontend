@@ -18,7 +18,7 @@ export class WorkoutBank extends Component {
 
         //Loops through the exercises to push each category in an array, checks so the category not being pushed twice
         for(let i = 0; i < this.state.exerciseArray.length; i++) {         
-            findCategory = allCategories.find((allCategories) => allCategories == exerciseArray[i].category);
+            findCategory = allCategories.find((allCategories) => allCategories === exerciseArray[i].category);
 
             if(!findCategory) {
                 allCategories.push(this.state.exerciseArray[i].category);

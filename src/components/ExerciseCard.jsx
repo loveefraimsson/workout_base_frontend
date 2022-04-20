@@ -1,5 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
-import Exercise from './Exercise';
+import React, { Component } from 'react';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 

@@ -5,10 +5,9 @@ export function addToCart(product) {
 
     product.id = newId;
 
-    let findProduct = productsInCart.find((productsInCart) => productsInCart.id == newId);
+    let findProduct = productsInCart.find((productsInCart) => productsInCart.id === newId);
 
-    if (findProduct == undefined) {
-        console.log("Pusha till cart");
+    if (findProduct === undefined) {
         productsInCart.push(product);
         localStorage.setItem("cart",  JSON.stringify(productsInCart))
     }
