@@ -8,7 +8,7 @@ Jag fick denna idé då jag själv är väldigt intresserad av träning och när
 
 ## Live-version och backend
 
-[Här kan du se webbsidan live]
+[Här kan du se webbsidan live](https://workout-base-frontend.vercel.app/)
 [Här är backend-repot för projektet](https://github.com/loveefraimsson/workout_base_backend) 
 
 ## Inloggningsuppgifter
