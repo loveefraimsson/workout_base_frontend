@@ -38,9 +38,12 @@ Klona ner repot för att få frontenden av applikationen. Kör följande kommand
 
 Backenden ligger live så den behöver inte göras något med för att köra projektet lokalt. Dock, väljer man att köra mot lokal backend så behöver man ändra så att alla fetch-länkar pekar lokalt. 
 
-## Ramverk bibliotek och paket
-Jag har använt mig av React.js, Express.js, MongoDB som databas och Node.js. Jag har även använt Sass för CSS.
-Andra paket som jag har använt är nodemon, cors och html-react-parser.
+## YekningStack (Ramverk bibliotek och paket)
+Jag har valt att arbeta med Node.js och då React.js och Express.js. Som CSS-ramverk valde jag att arbeta med Sass. 
+
+Jag valde React för det känns modernt och bra att öva mer på då det används så pass mycket i arbetslivet idag. Jag valde Express för att jag tycker att det var lämpligt som backend och uppfyllde dom kraven som jag hade på backenden. Sass har vi arbetat med en del innan, men jag har inte gjort det så mycket och det var något jag ville öva på och lära mig bättre inför framtiden så därför valde jag att göra CSS:en i det.
+
+Andra paket som jag har använt är Nodemon, Cors, CryptoJS och Html-react-parser.
 
 ## API
 API:et som används i projektet är: https://type.fit/api/quotes
