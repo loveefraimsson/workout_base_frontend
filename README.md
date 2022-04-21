@@ -38,7 +38,7 @@ Klona ner repot för att få frontenden av applikationen. Kör följande kommand
 
 Backenden ligger live så den behöver inte göras något med för att köra projektet lokalt. Dock, väljer man att köra mot lokal backend så behöver man ändra så att alla fetch-länkar pekar lokalt. 
 
-## YekningStack (Ramverk bibliotek och paket)
+## TeknikStack (Ramverk bibliotek och paket)
 Jag har valt att arbeta med Node.js och då React.js och Express.js. Som CSS-ramverk valde jag att arbeta med Sass. 
 
 Jag valde React för det känns modernt och bra att öva mer på då det används så pass mycket i arbetslivet idag. Jag valde Express för att jag tycker att det var lämpligt som backend och uppfyllde dom kraven som jag hade på backenden. Sass har vi arbetat med en del innan, men jag har inte gjort det så mycket och det var något jag ville öva på och lära mig bättre inför framtiden så därför valde jag att göra CSS:en i det.
