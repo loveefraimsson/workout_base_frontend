@@ -6,6 +6,10 @@ Detta är ett projekt som jag har gjort som mitt examensarbete. Som användare l
 
 Jag fick denna idé då jag själv är väldigt intresserad av träning och när jag var nybörjare var detta en sida jag gärna själv hade besökt.
 
+## Syfte
+
+Syftet med projektet är att skapa en välkomnande miljö för nybörjare på gymmet. En plats där människor kan hitta bra och nyttig information som de letar efter. Denna hemsida behövs för att sidor som liknar denna i dagsläget är väldigt komplicerade om man inte vet något om träning. När man är nybörjare så vill man ha det enkelt och förståeligt, och det tycker jag att denna sidan är.
+
 ## Live-version och backend
 
 [Här kan du se webbsidan live](https://workout-base-frontend.vercel.app/)
