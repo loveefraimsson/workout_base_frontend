@@ -41,7 +41,11 @@ Backenden ligger live så den behöver inte göras något med för att köra pro
 ## TeknikStack (Ramverk, bibliotek och paket)
 Jag har valt att arbeta med Node.js och då React.js och Express.js. Som CSS-ramverk valde jag att arbeta med Sass. 
 
-Jag valde React för det känns modernt och bra att öva mer på då det används så pass mycket som det gör i arbetslivet idag. Jag kände inte att funktionaliteten i React begränsade mig på något sätt utan snarare att det var ett väldigt lämligt val av ramverk för projektet. det är version 17.0.2 av React som används. Jag valde Express för att jag tycker att det var lämpligt som backend och uppfyllde dom kraven som jag hade på backenden. Sass har jag arbetat med en del innan, men jag har inte gjort det så mycket och det var något jag ville öva på och lära mig bättre inför framtiden, så därför valde jag att göra CSS:en i det.
+Jag valde React för det känns modernt och bra att öva mer på då det används så pass mycket som det gör i arbetslivet idag. Jag kände inte att funktionaliteten i React begränsade mig på något sätt utan snarare att det var ett väldigt lämligt val av ramverk för projektet. Det är version 17.0.2 av React som används. 
+
+Jag valde Express för att jag tycker att det var lämpligt som backend och uppfyllde dom kraven som jag hade på backenden. 
+
+Sass har jag arbetat med en del innan, men jag har inte gjort det så mycket och det var något jag ville öva på och lära mig bättre inför framtiden, så därför valde jag att göra CSS:en i det.
 
 Andra paket som jag har använt är Nodemon, Cors, CryptoJS och Html-react-parser.
 
